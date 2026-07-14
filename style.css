@@ -63,8 +63,9 @@ body{
     display:flex;
     justify-content:center;
     align-items:center;
-    height:100vh;
-    overflow:hidden;
+    min-height:100vh;
+overflow-y:auto;
+padding:30px 20px;
 }
 
 #loading{
@@ -72,9 +73,9 @@ body{
 }
 
 h1{
-    font-size:40px;
-    color:#ff4d6d;
-    text-shadow:0 0 20px #ff4d6d;
+    font-size:32px;
+margin-top:40px;
+line-height:1.3;
 }
 
 p{

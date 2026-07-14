@@ -1,1 +1,32 @@
-/* Tannu Birthday Website CSS */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#000;
+    color:white;
+    font-family:Arial, sans-serif;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    overflow:hidden;
+}
+
+#loading{
+    text-align:center;
+}
+
+h1{
+    font-size:40px;
+    color:#ff4d6d;
+    text-shadow:0 0 20px #ff4d6d;
+}
+
+p{
+    margin-top:15px;
+    color:#ddd;
+    font-size:18px;
+}

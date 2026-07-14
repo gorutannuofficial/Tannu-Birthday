@@ -1,4 +1,4 @@
-const correctPassword = "BPS"; // Tannu13Goru
+const correctPassword = "Tannu13Goru"; // 
 
 setTimeout(() => {
     const userPassword = prompt("🔐 Enter Secret Password");

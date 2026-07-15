@@ -1,3 +1,4 @@
+alert("Script Loaded");
 const PASSWORD = "Tannu13Goru";
 
 const passwordScreen = document.getElementById("password-screen");

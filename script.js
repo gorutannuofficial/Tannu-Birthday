@@ -98,10 +98,9 @@ I Love You Forever ❤️`;
 // PHOTO GALLERY
 // ==========================
 
-const nextLetter = document.getElementById("nextLetter");
-const galleryScreen = document.getElementById("gallery-screen");
-const galleryImage = document.getElementById("gallery-image");
+const prevPhoto = document.getElementById("prevPhoto");
 const nextPhoto = document.getElementById("nextPhoto");
+const photoCounter = document.getElementById("photoCounter");
 
 const photos = [
     "photo1.jpg",
@@ -112,14 +111,30 @@ const photos = [
 
 let currentPhoto = 0;
 
-nextLetter.addEventListener("click", function () {
+function updatePhoto(){
+
+    galleryImage.style.opacity = "0";
+
+    setTimeout(function(){
+
+        galleryImage.src = photos[currentPhoto];
+        galleryImage.style.opacity = "1";
+        photoCounter.innerHTML = (currentPhoto + 1) + " / " + photos.length;
+
+    },250);
+
+}
+
+nextLetter.addEventListener("click", function(){
 
     letterScreen.style.display = "none";
     galleryScreen.style.display = "flex";
 
+    updatePhoto();
+
 });
 
-nextPhoto.addEventListener("click", function () {
+nextPhoto.addEventListener("click", function(){
 
     currentPhoto++;
 
@@ -127,12 +142,18 @@ nextPhoto.addEventListener("click", function () {
         currentPhoto = 0;
     }
 
-    galleryImage.style.opacity = "0";
+    updatePhoto();
 
-setTimeout(() => {
+});
 
-    galleryImage.src = photos[currentPhoto];
-    galleryImage.style.opacity = "1";
+prevPhoto.addEventListener("click", function(){
 
-},250);
+    currentPhoto--;
+
+    if(currentPhoto < 0){
+        currentPhoto = photos.length - 1;
+    }
+
+    updatePhoto();
+
 });

@@ -58,18 +58,3 @@ unlockBtn.addEventListener("click", function(){
     },30);
 
 });
-const startBtn = document.getElementById("startBtn");
-
-startBtn.addEventListener("click", function () {
-
-    document.getElementById("welcome-screen").style.display = "none";
-    document.getElementById("letter-screen").style.display = "flex";
-
-    document.getElementById("letter-text").innerHTML =
-    "❤️ Dear Tannu,<br><br>" +
-    "Happy Birthday Meri Jaan ❤️<br><br>" +
-    "Tum meri life ka sabse beautiful gift ho. " +
-    "Har din tumhare saath aur bhi special ban jata hai. " +
-    "Main hamesha tumhare saath rahunga. ❤️";
-
-});

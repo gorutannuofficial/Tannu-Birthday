@@ -1,4 +1,3 @@
-alert("Script Loaded");
 const PASSWORD = "Tannu13Goru";
 
 const passwordScreen = document.getElementById("password-screen");
@@ -12,113 +11,32 @@ const error = document.getElementById("error");
 const progressBar = document.getElementById("progress-bar");
 const progressText = document.getElementById("progress-text");
 
-unlockBtn.addEventListener("click", () => {
+loadingScreen.style.display = "none";
+welcomeScreen.style.display = "none";
+
+unlockBtn.onclick = function () {
 
     if (passwordInput.value.trim() !== PASSWORD) {
-        error.textContent = "❌ Wrong Password";
+
+        error.innerHTML = "❌ Wrong Password";
         passwordInput.style.border = "2px solid red";
+
+        if (navigator.vibrate) {
+            navigator.vibrate(200);
+        }
+
         return;
     }
 
+    error.innerHTML = "";
     passwordScreen.style.display = "none";
     loadingScreen.style.display = "flex";
 
     let progress = 0;
 
-    const timer = setInterval(() => {
+    const timer = setInterval(function () {
 
         progress++;
 
         progressBar.style.width = progress + "%";
-        progressText.textContent = progress + "%";
-
-        if (progress >= 100) {
-
-            clearInterval(timer);
-
-            loadingScreen.style.display = "none";
-            welcomeScreen.style.display = "flex";
-
-        }
-
-    }, 30);
-
-});
-
-document.getElementById("startBtn").addEventListener("click", () => {
-
-    alert("🎉 Welcome Tannu ❤️");
-
-});
-        if (progress >= 100) {
-
-            clearInterval(timer);
-
-            setTimeout(() => {
-
-                loadingScreen.style.display = "none";
-                welcomeScreen.style.display = "flex";
-
-            }, 500);
-
-        }
-
-    }, 30);
-
-});
-
-document.getElementById("startBtn").addEventListener("click", () => {
-
-    alert("🎉 Chapter 3 Coming Next ❤️");
-
-});                                Birthday Surprise is Ready...
-                            </p>
-                        </div>
-                    `;
-                }, 300);
-            }
-
-        }, 30);
-
-    } else {
-
-        error.innerHTML = "❌ Wrong Password";
-        passwordInput.style.border = "2px solid red";
-        navigator.vibrate?.(200);
-
-    }
-
-});    else{
-
-        error.innerHTML="❌ Wrong Password";
-
-        passwordInput.style.border="2px solid red";
-
-        navigator.vibrate?.(200);
-
-    }
-
-});
-const loadingScreen = document.getElementById("loading-screen");
-const progressBar = document.getElementById("progress-bar");
-const progressText = document.getElementById("progress-text");
-
-loadingScreen.style.display = "flex";
-
-let progress = 0;
-
-const interval = setInterval(() => {
-    progress++;
-
-    progressBar.style.width = progress + "%";
-    progressText.innerText = progress + "%";
-
-    if (progress >= 100) {
-        clearInterval(interval);
-
-        setTimeout(() => {
-            loadingScreen.style.display = "none";
-        }, 500);
-    }
-
-}, 30);
+        progressText.innerHTML = progress + "%";

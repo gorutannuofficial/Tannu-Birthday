@@ -163,3 +163,32 @@ prevPhoto.addEventListener("click", function(){
     updatePhoto();
 
 });
+/* ==========================
+   SWIPE GALLERY
+========================== */
+
+let startX = 0;
+
+galleryImage.addEventListener("touchstart", function(e){
+
+    startX = e.touches[0].clientX;
+
+});
+
+galleryImage.addEventListener("touchend", function(e){
+
+    let endX = e.changedTouches[0].clientX;
+
+    if(startX - endX > 60){
+
+        nextPhoto.click();
+
+    }
+
+    if(endX - startX > 60){
+
+        prevPhoto.click();
+
+    }
+
+});

@@ -94,3 +94,39 @@ I Love You Forever ❤️`;
     }, 40);
 
 });
+// ==========================
+// PHOTO GALLERY
+// ==========================
+
+const nextLetter = document.getElementById("nextLetter");
+const galleryScreen = document.getElementById("gallery-screen");
+const galleryImage = document.getElementById("gallery-image");
+const nextPhoto = document.getElementById("nextPhoto");
+
+const photos = [
+    "photo1.jpg",
+    "photo2.jpg",
+    "photo3.jpg",
+    "photo4.jpg"
+];
+
+let currentPhoto = 0;
+
+nextLetter.addEventListener("click", function () {
+
+    letterScreen.style.display = "none";
+    galleryScreen.style.display = "flex";
+
+});
+
+nextPhoto.addEventListener("click", function () {
+
+    currentPhoto++;
+
+    if(currentPhoto >= photos.length){
+        currentPhoto = 0;
+    }
+
+    galleryImage.src = photos[currentPhoto];
+
+});

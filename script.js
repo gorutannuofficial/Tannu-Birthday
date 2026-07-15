@@ -10,7 +10,8 @@ const error = document.getElementById("error");
 
 const progressBar = document.getElementById("progress-bar");
 const progressText = document.getElementById("progress-text");
-
+const letterScreen = document.getElementById("letter-screen");
+const letterText = document.getElementById("letter-text");
 loadingScreen.style.display = "none";
 welcomeScreen.style.display = "none";
 

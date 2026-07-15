@@ -1,40 +1,187 @@
-/* ===========================
-   CHAPTER 2 - LOADING SCREEN
-=========================== */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-#loading-screen{
+body{
+    background:#050505;
+    font-family:Inter,Poppins,Arial,sans-serif;
+    overflow:hidden;
+    color:#fff;
+}
+
+/* ========= STARS ========= */
+
+.bg-stars{
     position:fixed;
     inset:0;
-    display:none;
+    background-image:
+    radial-gradient(white 1px,transparent 1px),
+    radial-gradient(#ff4d8d 1px,transparent 1px);
+    background-size:40px 40px,80px 80px;
+    animation:starsMove 25s linear infinite;
+    opacity:.5;
+    z-index:1;
+}
+
+@keyframes starsMove{
+    from{
+        transform:translateY(0);
+    }
+    to{
+        transform:translateY(-300px);
+    }
+}
+
+/* ========= COMMON SCREEN ========= */
+
+#password-screen,
+#loading-screen,
+#welcome-screen{
+    position:fixed;
+    inset:0;
+    display:flex;
     justify-content:center;
     align-items:center;
-    background:#050505;
-    z-index:9999;
+    z-index:2;
 }
 
-.loading-card{
+#loading-screen,
+#welcome-screen{
+    display:none;
+}
+
+/* ========= CARD ========= */
+
+.login-card,
+.loading-card,
+.welcome-card{
+
     width:90%;
-    max-width:360px;
+    max-width:370px;
+
     padding:30px;
+
     border-radius:25px;
-    background:rgba(255,255,255,0.08);
+
+    background:rgba(255,255,255,.08);
+
     backdrop-filter:blur(15px);
+
     text-align:center;
+
     box-shadow:0 0 30px rgba(255,77,141,.35);
+
 }
 
-.loading-card h2{
-    color:#FF4D8D;
-    margin-bottom:10px;
+/* ========= TEXT ========= */
+
+h1{
+    color:#ff4d8d;
+    margin-bottom:15px;
+    font-size:30px;
 }
 
-.loading-card p{
+p{
     color:#ddd;
-    margin-bottom:25px;
 }
+
+/* ========= INPUT ========= */
+
+input{
+
+    width:100%;
+
+    padding:15px;
+
+    margin-top:25px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:15px;
+
+    font-size:16px;
+
+}
+
+/* ========= BUTTON ========= */
+
+button{
+
+    width:100%;
+
+    margin-top:20px;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:15px;
+
+    background:#ff4d8d;
+
+    color:white;
+
+    font-size:17px;
+
+    cursor:pointer;
+
+    box-shadow:0 0 20px rgba(255,77,141,.5);
+
+}
+
+/* ========= ERROR ========= */
+
+#error{
+
+    height:25px;
+
+    margin-top:15px;
+
+    color:#ff5c5c;
+
+}
+
+/* ========= PROGRESS ========= */
 
 .progress{
+
     width:100%;
+
+    height:12px;
+
+    background:#222;
+
+    border-radius:50px;
+
+    overflow:hidden;
+
+    margin-top:20px;
+
+}
+
+.progress-bar{
+
+    width:0%;
+
+    height:100%;
+
+    background:linear-gradient(90deg,#ff4d8d,#ffb6c1);
+
+}
+
+#progress-text{
+
+    display:block;
+
+    margin-top:15px;
+
+    font-size:18px;
+
+}    width:100%;
     height:12px;
     background:#222;
     border-radius:50px;

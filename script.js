@@ -59,10 +59,4 @@ unlockBtn.addEventListener("click", function(){
 
 });
 
-const startBtn = document.getElementById("startBtn");
-
-startBtn.addEventListener("click",function(){
-
-    alert("🎉 Chapter 3 Coming Soon ❤️");
-
-});
+const startBtn = 

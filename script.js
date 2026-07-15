@@ -42,3 +42,27 @@ unlockBtn.addEventListener("click", function(){
 
         progressBar.style.width = progress + "%";
         progressText.innerHTML = progress + "%";
+        if(progress >= 100){
+
+            clearInterval(timer);
+
+            setTimeout(function(){
+
+                loadingScreen.style.display = "none";
+                welcomeScreen.style.display = "flex";
+
+            },500);
+
+        }
+
+    },30);
+
+});
+
+const startBtn = document.getElementById("startBtn");
+
+startBtn.addEventListener("click",function(){
+
+    alert("🎉 Chapter 3 Coming Soon ❤️");
+
+});

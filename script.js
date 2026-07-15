@@ -59,3 +59,38 @@ unlockBtn.addEventListener("click", function(){
     },30);
 
 });
+const startBtn = document.getElementById("startBtn");
+
+startBtn.addEventListener("click", function () {
+
+    welcomeScreen.style.display = "none";
+    letterScreen.style.display = "flex";
+
+    const message = `❤️ Dear Tannu ❤️
+
+Happy Birthday Meri Jaan...
+
+Tum meri life ki sabse beautiful gift ho.
+
+Har din tumhare saath aur bhi special ban jata hai.
+
+Main hamesha tumhare saath rahunga.
+
+I Love You Forever ❤️`;
+
+    let i = 0;
+    letterText.innerHTML = "";
+
+    const typing = setInterval(function () {
+
+        letterText.innerHTML += message.charAt(i);
+
+        i++;
+
+        if (i >= message.length) {
+            clearInterval(typing);
+        }
+
+    }, 40);
+
+});

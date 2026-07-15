@@ -116,7 +116,7 @@ function updatePhoto(){
     galleryImage.style.opacity = "0";
 
     setTimeout(function(){
-
+console.log(currentPhoto, photos[currentPhoto]);
         galleryImage.src = photos[currentPhoto];
         galleryImage.style.opacity = "1";
         photoCounter.innerHTML = (currentPhoto + 1) + " / " + photos.length;

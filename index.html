@@ -1,58 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday ❤️</title>
 
-<link rel="stylesheet" href="style.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Tannu ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div id="password-screen">
+    <!-- PASSWORD SCREEN -->
+    <div id="password-screen">
 
-    <div class="bg-stars"></div>
+        <div class="bg-stars"></div>
 
-    <div class="login-card">
+        <div class="login-card">
 
-        <h1>❤️ A Special Surprise ❤️</h1>
+            <h1>❤️ A Special Surprise ❤️</h1>
 
-        <p>Only For Tannu</p>
+            <p>Only For Tannu</p>
 
-        <input
-            type="password"
-            id="password"
-            placeholder="Enter Secret Password"
-        >
+            <input
+                type="password"
+                id="password"
+                placeholder="Enter Secret Password">
 
-        <button id="unlockBtn">
-            🔓 Unlock My Surprise
-        </button>
+            <button id="unlockBtn">
+                🔓 Unlock My Surprise
+            </button>
 
-        <p id="error"></p>
+            <p id="error"></p>
+
+        </div>
 
     </div>
 
-</div>
+    <!-- LOADING SCREEN -->
 
-<div class="loading-card">
+    <div id="loading-screen">
 
-    <h2>✨ Unlocking Your Surprise ✨</h2>
+        <div class="loading-card">
 
-    <p>Please wait...</p>
+            <h2>✨ Unlocking Your Surprise ✨</h2>
 
-    <div class="progress">
-        <div class="progress-bar" id="progress-bar"></div>
+            <p>Please wait...</p>
+
+            <div class="progress">
+
+                <div class="progress-bar" id="progress-bar"></div>
+
+            </div>
+
+            <span id="progress-text">0%</span>
+
+        </div>
+
     </div>
 
-    <span id="progress-text">0%</span>
+    <!-- WELCOME SCREEN -->
 
-</div>
+    <div id="welcome-screen">
 
-</div>
+        <div class="bg-stars"></div>
 
-<script src="script.js"></script>
+        <div class="welcome-card">
+
+            <h1 id="welcome-title">
+                ❤️ Happy Birthday Tannu ❤️
+            </h1>
+
+            <p id="welcome-subtitle">
+                Every moment with you is special...
+            </p>
+
+            <button id="startBtn">
+                🎁 Open Your Surprise
+            </button>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
 
 </body>
+
 </html>

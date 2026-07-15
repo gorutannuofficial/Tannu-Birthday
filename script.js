@@ -58,5 +58,3 @@ unlockBtn.addEventListener("click", function(){
     },30);
 
 });
-
-const startBtn = 

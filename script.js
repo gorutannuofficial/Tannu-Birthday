@@ -1,102 +1,54 @@
 const correctPassword = "Tannu13Goru";
 
-setTimeout(() => {
+const passwordScreen = document.getElementById("password-screen");
+const loadingScreen = document.getElementById("loading-screen");
 
-    const userPassword = prompt("🔐 Enter Secret Password");
+const passwordInput = document.getElementById("password");
+const unlockBtn = document.getElementById("unlockBtn");
+const error = document.getElementById("error");
 
-    if (userPassword === correctPassword) { document.body.innerHTML = `
-<div style="
-background:black;
-color:white;
-min-height:100vh;
-padding:25px;
-text-align:center;
-font-family:Arial,sans-serif;
-">
+unlockBtn.addEventListener("click", () => {
 
-<h1 style="
-font-size:48px;
-color:#ff4d6d;
-text-shadow:0 0 20px #ff4d6d;
-margin-top:20px;
-">
-🎂 Happy Birthday Tannu 🎂
-</h1>
+    if(passwordInput.value === correctPassword){
 
-<p style="font-size:24px;color:pink;">
-❤️ Welcome My Love ❤️
-</p>
+        error.innerHTML = "";
 
-<img src="photo1.jpg"
-style="
-width:90%;
-max-width:350px;
-border-radius:20px;
-border:4px solid hotpink;
-box-shadow:0 0 25px hotpink;
-margin-top:20px;
-">
+        passwordScreen.style.display = "none";
+        loadingScreen.style.display = "flex";
 
-<p style="font-size:20px;line-height:35px;margin-top:25px;">
-Aaj ka din meri life ka sabse special din hai... ❤️<br><br>
+        setTimeout(()=>{
 
-Kyuki aaj meri duniya ka sabse khoobsurat insaan is duniya me aaya tha.<br><br>
+            loadingScreen.innerHTML = `
+                <div style="text-align:center;color:white;">
+                    <h1 style="
+                    color:#ff4d6d;
+                    font-size:45px;
+                    text-shadow:0 0 20px #ff4d6d;
+                    ">
+                    ❤️ Welcome Tannu ❤️
+                    </h1>
 
-Thank You meri life me aane ke liye... ❤️
-</p>
+                    <p style="
+                    font-size:22px;
+                    margin-top:20px;
+                    ">
+                    Birthday Surprise is Loading...
+                    </p>
+                </div>
+            `;
 
-<img src="photo2.jpg"
-style="
-width:90%;
-max-width:350px;
-border-radius:20px;
-border:4px solid hotpink;
-box-shadow:0 0 25px hotpink;
-margin-top:35px;
-">
-
-<p style="font-size:20px;line-height:35px;margin-top:25px;">
-Har musibat me bas tera haath chahiye... ❤️<br><br>
-
-Har khushi tere saath manana chahta hu... ❤️
-</p>
-
-<img src="photo3.jpg"
-style="
-width:90%;
-max-width:350px;
-border-radius:20px;
-border:4px solid hotpink;
-box-shadow:0 0 25px hotpink;
-margin-top:35px;
-">
-
-<h2 style="
-font-size:38px;
-color:#ff4d6d;
-margin-top:40px;
-text-shadow:0 0 20px #ff4d6d;
-">
-💖 Forever Together 💖
-</h2>
-
-<p style="font-size:22px;margin-top:15px;">
-I Love You Forever ❤️
-</p>
-
-</div>
-`;
-
-        
-
-    } else {
-
-        document.body.innerHTML = `
-        <div style="display:flex;justify-content:center;align-items:center;height:100vh;background:black;color:white;font-size:30px;">
-        ❌ Wrong Password
-        </div>
-        `;
+        },3000);
 
     }
 
-},1000);
+    else{
+
+        error.innerHTML="❌ Wrong Password";
+
+        passwordInput.style.border="2px solid red";
+
+        navigator.vibrate?.(200);
+
+    }
+
+});

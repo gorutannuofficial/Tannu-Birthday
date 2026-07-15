@@ -120,7 +120,13 @@ function updatePhoto(){
         galleryImage.src = photos[currentPhoto];
         galleryImage.style.opacity = "1";
         photoCounter.innerHTML = (currentPhoto + 1) + " / " + photos.length;
+const dots = document.querySelectorAll(".dot");
 
+dots.forEach((dot) => {
+    dot.classList.remove("active");
+});
+
+dots[currentPhoto].classList.add("active");
     },250);
 
 }

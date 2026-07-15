@@ -1,4 +1,26 @@
-const correctPassword = "Tannu13Goru";
+const loadingScreen = document.getElementById("loading-screen");
+const progressBar = document.getElementById("progress-bar");
+const progressText = document.getElementById("progress-text");
+
+loadingScreen.style.display = "flex";
+
+let progress = 0;
+
+const interval = setInterval(() => {
+    progress++;
+
+    progressBar.style.width = progress + "%";
+    progressText.innerText = progress + "%";
+
+    if (progress >= 100) {
+        clearInterval(interval);
+
+        setTimeout(() => {
+            loadingScreen.style.display = "none";
+        }, 500);
+    }
+
+}, 30);const correctPassword = "Tannu13Goru";
 
 const passwordScreen = document.getElementById("password-screen");
 const loadingScreen = document.getElementById("loading-screen");
@@ -52,3 +74,26 @@ unlockBtn.addEventListener("click", () => {
     }
 
 });
+const loadingScreen = document.getElementById("loading-screen");
+const progressBar = document.getElementById("progress-bar");
+const progressText = document.getElementById("progress-text");
+
+loadingScreen.style.display = "flex";
+
+let progress = 0;
+
+const interval = setInterval(() => {
+    progress++;
+
+    progressBar.style.width = progress + "%";
+    progressText.innerText = progress + "%";
+
+    if (progress >= 100) {
+        clearInterval(interval);
+
+        setTimeout(() => {
+            loadingScreen.style.display = "none";
+        }, 500);
+    }
+
+}, 30);

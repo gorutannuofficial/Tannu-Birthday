@@ -176,3 +176,68 @@ button:active{
     font-size:18px;
     font-weight:bold;
 }
+/* ==========================
+   CHAPTER 3.2 - LETTER SCREEN
+========================== */
+
+#letter-screen{
+    display:none;
+    position:fixed;
+    inset:0;
+    justify-content:center;
+    align-items:center;
+    background:#000;
+    overflow:hidden;
+    z-index:30;
+}
+
+.letter-box{
+    width:90%;
+    max-width:380px;
+    padding:30px;
+    border-radius:28px;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(20px);
+    text-align:center;
+    box-shadow:0 0 40px rgba(255,77,109,.35);
+}
+
+.envelope{
+    font-size:70px;
+    margin-bottom:15px;
+    animation:floatLetter 2s ease-in-out infinite;
+}
+
+@keyframes floatLetter{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-10px);
+    }
+}
+
+.letter-box h1{
+    color:#ff4d6d;
+    margin-bottom:20px;
+}
+
+#letter-text{
+    color:white;
+    line-height:1.8;
+    font-size:18px;
+    min-height:220px;
+    white-space:pre-line;
+}
+
+#nextLetter{
+    margin-top:25px;
+    padding:15px 35px;
+    border:none;
+    border-radius:50px;
+    background:#ff4d6d;
+    color:#fff;
+    font-size:18px;
+    cursor:pointer;
+    box-shadow:0 0 25px #ff4d6d;
+}

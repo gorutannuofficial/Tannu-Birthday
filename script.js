@@ -127,6 +127,12 @@ nextPhoto.addEventListener("click", function () {
         currentPhoto = 0;
     }
 
-    galleryImage.src = photos[currentPhoto];
+    galleryImage.style.opacity = "0";
 
+setTimeout(() => {
+
+    galleryImage.src = photos[currentPhoto];
+    galleryImage.style.opacity = "1";
+
+},250);
 });

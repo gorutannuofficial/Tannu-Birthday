@@ -12,6 +12,9 @@ const progressBar = document.getElementById("progress-bar");
 const progressText = document.getElementById("progress-text");
 const letterScreen = document.getElementById("letter-screen");
 const letterText = document.getElementById("letter-text");
+const nextLetter = document.getElementById("nextLetter");
+const galleryScreen = document.getElementById("gallery-screen");
+const galleryImage = document.getElementById("gallery-image");
 loadingScreen.style.display = "none";
 welcomeScreen.style.display = "none";
 

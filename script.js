@@ -1,40 +1,62 @@
-const correctPassword = "Tannu13Goru";
+const PASSWORD = "Tannu13Goru";
 
 const passwordScreen = document.getElementById("password-screen");
 const loadingScreen = document.getElementById("loading-screen");
+const welcomeScreen = document.getElementById("welcome-screen");
+
 const passwordInput = document.getElementById("password");
 const unlockBtn = document.getElementById("unlockBtn");
 const error = document.getElementById("error");
+
 const progressBar = document.getElementById("progress-bar");
 const progressText = document.getElementById("progress-text");
 
 unlockBtn.addEventListener("click", () => {
 
-    if (passwordInput.value === correctPassword) {
+    if (passwordInput.value.trim() !== PASSWORD) {
+        error.textContent = "❌ Wrong Password";
+        passwordInput.style.border = "2px solid #ff4d4d";
+        navigator.vibrate?.(200);
+        return;
+    }
 
-        error.innerHTML = "";
-        passwordScreen.style.display = "none";
-        loadingScreen.style.display = "flex";
+    error.textContent = "";
+    passwordInput.style.border = "none";
 
-        let progress = 0;
+    passwordScreen.style.display = "none";
+    loadingScreen.style.display = "flex";
 
-        const interval = setInterval(() => {
-            progress++;
+    let progress = 0;
 
-            progressBar.style.width = progress + "%";
-            progressText.innerText = progress + "%";
+    const timer = setInterval(() => {
 
-            if (progress >= 100) {
-                clearInterval(interval);
+        progress++;
 
-                setTimeout(() => {
-                    loadingScreen.innerHTML = `
-                        <div style="text-align:center;color:white;">
-                            <h1 style="color:#ff4d6d;font-size:45px;text-shadow:0 0 20px #ff4d6d;">
-                                ❤️ Welcome Tannu ❤️
-                            </h1>
-                            <p style="font-size:22px;margin-top:20px;">
-                                Birthday Surprise is Ready...
+        progressBar.style.width = progress + "%";
+        progressText.textContent = progress + "%";
+
+        if (progress >= 100) {
+
+            clearInterval(timer);
+
+            setTimeout(() => {
+
+                loadingScreen.style.display = "none";
+                welcomeScreen.style.display = "flex";
+
+            }, 500);
+
+        }
+
+    }, 30);
+
+});
+
+document.getElementById("startBtn").addEventListener("click", () => {
+
+    alert("🎉 Chapter 3 Coming Next ❤️");
+
+});                                Birthday Surprise is Ready...
                             </p>
                         </div>
                     `;

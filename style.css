@@ -285,3 +285,37 @@ button:active{
 #nextPhoto:active{
     transform:scale(.97);
 }
+/* ==========================
+   GALLERY CONTROLS
+========================== */
+
+.gallery-controls{
+    display:flex;
+    gap:12px;
+    margin-top:20px;
+}
+
+.gallery-controls button{
+    flex:1;
+    padding:16px;
+    border:none;
+    border-radius:18px;
+    background:#ff4d8d;
+    color:#fff;
+    font-size:17px;
+    cursor:pointer;
+    box-shadow:0 0 20px rgba(255,77,141,.45);
+    transition:.3s;
+}
+
+.gallery-controls button:active{
+    transform:scale(.96);
+}
+
+.photo-counter{
+    margin-top:15px;
+    color:#fff;
+    font-size:17px;
+    font-weight:600;
+    opacity:.85;
+}

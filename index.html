@@ -10,19 +10,39 @@
 
 <body>
 
-<div id="loading">
+<div id="password-screen">
 
-    <div class="stars"></div>
+    <div class="bg-stars"></div>
 
-    <h1 id="title">❤️ Happy Birthday Tannu ❤️</h1>
+    <div class="login-card">
 
-    <p id="subtitle">
-        A Surprise Made Only For You...
-    </p>
+        <h1>❤️ A Special Surprise ❤️</h1>
 
-    <button id="enterBtn">
-        🎁 Open My Surprise
-    </button>
+        <p>Only For Tannu</p>
+
+        <input
+            type="password"
+            id="password"
+            placeholder="Enter Secret Password"
+        >
+
+        <button id="unlockBtn">
+            🔓 Unlock My Surprise
+        </button>
+
+        <p id="error"></p>
+
+    </div>
+
+</div>
+
+<div id="loading-screen" style="display:none;">
+
+    <h2>Unlocking Your Surprise...</h2>
+
+    <div class="loader">
+        <div class="bar"></div>
+    </div>
 
 </div>
 

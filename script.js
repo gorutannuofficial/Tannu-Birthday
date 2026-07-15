@@ -14,14 +14,14 @@ const progressText = document.getElementById("progress-text");
 loadingScreen.style.display = "none";
 welcomeScreen.style.display = "none";
 
-unlockBtn.onclick = function () {
+unlockBtn.addEventListener("click", function(){
 
-    if (passwordInput.value.trim() !== PASSWORD) {
+    if(passwordInput.value.trim() !== PASSWORD){
 
         error.innerHTML = "❌ Wrong Password";
         passwordInput.style.border = "2px solid red";
 
-        if (navigator.vibrate) {
+        if(navigator.vibrate){
             navigator.vibrate(200);
         }
 
@@ -29,41 +29,16 @@ unlockBtn.onclick = function () {
     }
 
     error.innerHTML = "";
+    passwordInput.style.border = "none";
+
     passwordScreen.style.display = "none";
     loadingScreen.style.display = "flex";
 
     let progress = 0;
 
-    const timer = setInterval(function () {
+    const timer = setInterval(function(){
 
         progress++;
 
         progressBar.style.width = progress + "%";
         progressText.innerHTML = progress + "%";
-                if (progress >= 100) {
-
-            clearInterval(timer);
-
-            setTimeout(function () {
-
-                loadingScreen.style.display = "none";
-                welcomeScreen.style.display = "flex";
-
-            }, 500);
-
-        }
-
-    }, 30);
-
-};
-const startBtn = document.getElementById("startBtn");
-
-if (startBtn) {
-
-    startBtn.onclick = function () {
-
-        alert("🎉 Chapter 3 Coming Next ❤️");
-
-    };
-
-}

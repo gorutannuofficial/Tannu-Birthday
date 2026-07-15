@@ -40,3 +40,30 @@ unlockBtn.onclick = function () {
 
         progressBar.style.width = progress + "%";
         progressText.innerHTML = progress + "%";
+                if (progress >= 100) {
+
+            clearInterval(timer);
+
+            setTimeout(function () {
+
+                loadingScreen.style.display = "none";
+                welcomeScreen.style.display = "flex";
+
+            }, 500);
+
+        }
+
+    }, 30);
+
+};
+const startBtn = document.getElementById("startBtn");
+
+if (startBtn) {
+
+    startBtn.onclick = function () {
+
+        alert("🎉 Chapter 3 Coming Next ❤️");
+
+    };
+
+}

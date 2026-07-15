@@ -15,13 +15,9 @@ unlockBtn.addEventListener("click", () => {
 
     if (passwordInput.value.trim() !== PASSWORD) {
         error.textContent = "❌ Wrong Password";
-        passwordInput.style.border = "2px solid #ff4d4d";
-        navigator.vibrate?.(200);
+        passwordInput.style.border = "2px solid red";
         return;
     }
-
-    error.textContent = "";
-    passwordInput.style.border = "none";
 
     passwordScreen.style.display = "none";
     loadingScreen.style.display = "flex";
@@ -35,6 +31,24 @@ unlockBtn.addEventListener("click", () => {
         progressBar.style.width = progress + "%";
         progressText.textContent = progress + "%";
 
+        if (progress >= 100) {
+
+            clearInterval(timer);
+
+            loadingScreen.style.display = "none";
+            welcomeScreen.style.display = "flex";
+
+        }
+
+    }, 30);
+
+});
+
+document.getElementById("startBtn").addEventListener("click", () => {
+
+    alert("🎉 Welcome Tannu ❤️");
+
+});
         if (progress >= 100) {
 
             clearInterval(timer);

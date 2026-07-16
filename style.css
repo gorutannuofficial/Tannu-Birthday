@@ -344,3 +344,26 @@ button:active{
     background:#ff4d8d;
     box-shadow:0 0 15px #ff4d8d;
 }
+/* ==========================
+   MUSIC BUTTON
+========================== */
+
+#musicBtn{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:60px;
+    height:60px;
+    border:none;
+    border-radius:50%;
+    background:#ff4d8d;
+    color:#fff;
+    font-size:26px;
+    cursor:pointer;
+    box-shadow:0 0 20px rgba(255,77,141,.5);
+    z-index:9999;
+}
+
+#musicBtn:active{
+    transform:scale(.95);
+}

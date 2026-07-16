@@ -354,7 +354,7 @@ const likeHeart = document.getElementById("like-heart");
 let lastTap = 0;
 
 galleryImage.addEventListener("touchend", function(){
-
+alert("Double Tap Test");
     const now = new Date().getTime();
 
     if(now - lastTap < 300){

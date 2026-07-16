@@ -238,6 +238,36 @@ musicBtn.addEventListener("click", function () {
 
 });
 /* ==========================
+   FULLSCREEN PHOTO
+========================== */
+
+const fullscreenView = document.getElementById("fullscreen-view");
+const fullscreenImage = document.getElementById("fullscreen-image");
+const closeFullscreen = document.getElementById("closeFullscreen");
+
+galleryImage.addEventListener("click", function(){
+
+    fullscreenView.style.display = "flex";
+    fullscreenImage.src = galleryImage.src;
+
+});
+
+closeFullscreen.addEventListener("click", function(){
+
+    fullscreenView.style.display = "none";
+
+});
+
+fullscreenView.addEventListener("click", function(e){
+
+    if(e.target === fullscreenView){
+
+        fullscreenView.style.display = "none";
+
+    }
+
+});
+/* ==========================
    FLOATING HEARTS
 ========================== */
 

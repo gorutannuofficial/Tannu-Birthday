@@ -237,3 +237,29 @@ musicBtn.addEventListener("click", function () {
     }
 
 });
+/* ==========================
+   FLOATING HEARTS
+========================== */
+
+const heartsContainer = document.getElementById("hearts-container");
+
+function createHeart(){
+
+    const heart = document.createElement("div");
+
+    heart.className = "heart";
+    heart.innerHTML = "❤️";
+
+    heart.style.left = Math.random() * 100 + "%";
+    heart.style.fontSize = (18 + Math.random() * 20) + "px";
+    heart.style.animationDuration = (4 + Math.random() * 4) + "s";
+
+    heartsContainer.appendChild(heart);
+
+    setTimeout(function(){
+        heart.remove();
+    },8000);
+
+}
+
+setInterval(createHeart,700);

@@ -195,3 +195,35 @@ galleryImage.addEventListener("touchend", function(e){
     }
 
 });
+/* ==========================
+   BACKGROUND MUSIC
+========================== */
+
+const bgMusic = document.getElementById("bgMusic");
+const musicBtn = document.getElementById("musicBtn");
+
+let musicPlaying = false;
+
+musicBtn.addEventListener("click", async function () {
+
+    if(!musicPlaying){
+
+        bgMusic.volume = 0.35;
+
+        try{
+            await bgMusic.play();
+            musicBtn.innerHTML = "🔊";
+            musicPlaying = true;
+        }catch(e){
+            console.log("Music blocked by browser.");
+        }
+
+    }else{
+
+        bgMusic.pause();
+        musicBtn.innerHTML = "🎵";
+        musicPlaying = false;
+
+    }
+
+});

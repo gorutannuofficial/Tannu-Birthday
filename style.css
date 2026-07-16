@@ -375,3 +375,12 @@ button:active{
     transition:opacity .3s ease;
     min-height:60px;
 }
+#gallery-caption{
+    margin-top:18px;
+    font-size:18px;
+    color:#ffffff;
+    line-height:1.6;
+    text-align:center;
+    transition:opacity .3s ease;
+    min-height:60px;
+}

@@ -111,7 +111,12 @@ const photos = [
     "photo3.jpg",
     "photo4.jpg"
 ];
-
+const captions = [
+    "❤️ Caption 1",
+    "❤️ Caption 2",
+    "❤️ Caption 3",
+    "❤️ Caption 4"
+];
 let currentPhoto = 0;
 
 function updatePhoto(){

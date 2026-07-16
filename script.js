@@ -251,7 +251,7 @@ galleryImage.addEventListener("click", function(){
 
     fullscreenView.style.display = "flex";
     fullscreenImage.src = galleryImage.src;
-
+fullscreenCounter.innerHTML = (currentPhoto + 1) + " / " + photos.length;
 });
 closeFullscreen.addEventListener("click", function(){
 

@@ -353,8 +353,27 @@ const likeHeart = document.getElementById("like-heart");
 
 let lastTap = 0;
 
-galleryImage.addEventListener("touchend", function(){
+galleryImage.addEventListener("touchend", function(e){
 
+    const now = Date.now();
+
+    if(now - lastTap < 300){
+
+        likeHeart.classList.add("show");
+
+        if(navigator.vibrate){
+            navigator.vibrate(50);
+        }
+
+        setTimeout(function(){
+            likeHeart.classList.remove("show");
+        },800);
+
+    }
+
+    lastTap = now;
+
+});
     const now = new Date().getTime();
 
     if(now - lastTap < 300){

@@ -265,6 +265,8 @@ button:active{
     border:3px solid rgba(255,255,255,.15);
     box-shadow:0 15px 35px rgba(0,0,0,.5);
     transition:.5s ease;
+pointer-events: auto;
+cursor: pointer;
 }
 
 #gallery-caption{

@@ -202,27 +202,22 @@ galleryImage.addEventListener("touchend", function(e){
 const bgMusic = document.getElementById("bgMusic");
 const musicBtn = document.getElementById("musicBtn");
 
-let musicPlaying = false;
+bgMusic.volume = 0.35;
 
-musicBtn.addEventListener("click", async function () {
+musicBtn.addEventListener("click", function () {
 
-    if(!musicPlaying){
+    if (bgMusic.paused) {
 
-        bgMusic.volume = 0.35;
-
-        try{
-            await bgMusic.play();
+        bgMusic.play().then(function () {
             musicBtn.innerHTML = "🔊";
-            musicPlaying = true;
-        }catch(e){
-            console.log("Music blocked by browser.");
-        }
+        }).catch(function (err) {
+            console.log(err);
+        });
 
-    }else{
+    } else {
 
         bgMusic.pause();
         musicBtn.innerHTML = "🎵";
-        musicPlaying = false;
 
     }
 

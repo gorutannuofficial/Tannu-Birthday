@@ -128,7 +128,17 @@ console.log(currentPhoto, photos[currentPhoto]);
         galleryImage.src = photos[currentPhoto];
         galleryImage.style.opacity = "1";
         photoCounter.innerHTML = (currentPhoto + 1) + " / " + photos.length;
-const dots = document.querySelectorAll(".dot");
+const caption = document.getElementById("gallery-caption");
+
+caption.style.opacity = "0";
+
+setTimeout(function () {
+
+    caption.innerHTML = captions[currentPhoto];
+    caption.style.opacity = "1";
+
+}, 200);
+        const dots = document.querySelectorAll(".dot");
 
 dots.forEach((dot) => {
     dot.classList.remove("active");

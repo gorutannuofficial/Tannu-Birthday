@@ -247,11 +247,12 @@ const closeFullscreen = document.getElementById("closeFullscreen");
 
 galleryImage.addEventListener("click", function(){
 
+    alert("Photo Clicked!");
+
     fullscreenView.style.display = "flex";
     fullscreenImage.src = galleryImage.src;
 
 });
-
 closeFullscreen.addEventListener("click", function(){
 
     fullscreenView.style.display = "none";

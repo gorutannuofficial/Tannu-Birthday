@@ -246,8 +246,7 @@ const fullscreenImage = document.getElementById("fullscreen-image");
 const closeFullscreen = document.getElementById("closeFullscreen");
 
 galleryImage.addEventListener("click", function(){
-
-    
+ alert("Image Click Working");
     fullscreenView.style.display = "flex";
     fullscreenImage.src = galleryImage.src;
 fullscreenCounter.innerHTML = (currentPhoto + 1) + " / " + photos.length;

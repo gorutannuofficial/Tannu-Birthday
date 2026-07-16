@@ -367,3 +367,11 @@ button:active{
 #musicBtn:active{
     transform:scale(.95);
 }
+#gallery-caption{
+    margin-top:18px;
+    font-size:18px;
+    color:#ffffff;
+    line-height:1.6;
+    transition:opacity .3s ease;
+    min-height:60px;
+}

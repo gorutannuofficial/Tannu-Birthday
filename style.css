@@ -401,3 +401,38 @@ button:active{
     transform:scale(0.92);
     opacity:.35;
 }
+/* ==========================
+   FLOATING HEARTS
+========================== */
+
+#hearts-container{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    overflow:hidden;
+    z-index:1;
+}
+
+.heart{
+    position:absolute;
+    bottom:-40px;
+    font-size:22px;
+    animation:floatHeart linear forwards;
+    opacity:.8;
+}
+
+@keyframes floatHeart{
+    0%{
+        transform:translateY(0) scale(.8);
+        opacity:0;
+    }
+
+    15%{
+        opacity:.9;
+    }
+
+    100%{
+        transform:translateY(-110vh) scale(1.4);
+        opacity:0;
+    }
+}

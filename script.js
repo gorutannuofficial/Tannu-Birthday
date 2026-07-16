@@ -121,12 +121,12 @@ let currentPhoto = 0;
 
 function updatePhoto(){
 
-    galleryImage.style.opacity = "0";
+    galleryImage.classList.add("photo-animate");
 
     setTimeout(function(){
 console.log(currentPhoto, photos[currentPhoto]);
         galleryImage.src = photos[currentPhoto];
-        galleryImage.style.opacity = "1";
+        galleryImage.classList.remove("photo-animate");
         photoCounter.innerHTML = (currentPhoto + 1) + " / " + photos.length;
 const caption = document.getElementById("gallery-caption");
 

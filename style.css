@@ -384,3 +384,20 @@ button:active{
     transition:opacity .3s ease;
     min-height:60px;
 }
+/* ==========================
+   PHOTO ANIMATION
+========================== */
+
+#gallery-image{
+    width:100%;
+    max-width:320px;
+    border-radius:22px;
+    transition:
+        opacity .4s ease,
+        transform .4s ease;
+}
+
+.photo-animate{
+    transform:scale(0.92);
+    opacity:.35;
+}

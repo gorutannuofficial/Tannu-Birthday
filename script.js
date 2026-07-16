@@ -246,7 +246,7 @@ const fullscreenImage = document.getElementById("fullscreen-image");
 const closeFullscreen = document.getElementById("closeFullscreen");
 
 galleryImage.addEventListener("click", function(){
- alert("Image Click Working");
+ 
     fullscreenView.style.display = "flex";
     fullscreenImage.src = galleryImage.src;
 fullscreenCounter.innerHTML = (currentPhoto + 1) + " / " + photos.length;
@@ -353,7 +353,7 @@ const likeHeart = document.getElementById("like-heart");
 let lastTap = 0;
 
 galleryImage.addEventListener("touchend", function(){
-alert("Double Tap Test");
+
     const now = new Date().getTime();
 
     if(now - lastTap < 300){

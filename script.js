@@ -345,3 +345,28 @@ fullscreenImage.addEventListener("touchend", function(e){
     }
 
 });
+/* ==========================
+   DOUBLE TAP LIKE
+========================== */
+
+const likeHeart = document.getElementById("like-heart");
+
+let lastTap = 0;
+
+galleryImage.addEventListener("touchend", function(){
+
+    const now = new Date().getTime();
+
+    if(now - lastTap < 300){
+
+        likeHeart.classList.add("show");
+
+        setTimeout(function(){
+            likeHeart.classList.remove("show");
+        },800);
+
+    }
+
+    lastTap = now;
+
+});

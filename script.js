@@ -294,3 +294,55 @@ function createHeart(){
 }
 
 setInterval(createHeart,700);
+/* ==========================
+   FULLSCREEN SWIPE
+========================== */
+
+const fullscreenCounter = document.getElementById("fullscreen-counter");
+
+function updateFullscreen(){
+
+    fullscreenImage.src = photos[currentPhoto];
+    fullscreenCounter.innerHTML = (currentPhoto + 1) + " / " + photos.length;
+
+}
+
+let fullStartX = 0;
+
+fullscreenImage.addEventListener("touchstart", function(e){
+
+    fullStartX = e.touches[0].clientX;
+
+});
+
+fullscreenImage.addEventListener("touchend", function(e){
+
+    let fullEndX = e.changedTouches[0].clientX;
+
+    if(fullStartX - fullEndX > 60){
+
+        currentPhoto++;
+
+        if(currentPhoto >= photos.length){
+            currentPhoto = 0;
+        }
+
+        updatePhoto();
+        updateFullscreen();
+
+    }
+
+    if(fullEndX - fullStartX > 60){
+
+        currentPhoto--;
+
+        if(currentPhoto < 0){
+            currentPhoto = photos.length - 1;
+        }
+
+        updatePhoto();
+        updateFullscreen();
+
+    }
+
+});

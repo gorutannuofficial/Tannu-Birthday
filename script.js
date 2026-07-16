@@ -246,10 +246,11 @@ const fullscreenImage = document.getElementById("fullscreen-image");
 const closeFullscreen = document.getElementById("closeFullscreen");
 
 galleryImage.addEventListener("click", function(){
- 
+
     fullscreenView.style.display = "flex";
-    fullscreenImage.src = galleryImage.src;
-fullscreenCounter.innerHTML = (currentPhoto + 1) + " / " + photos.length;
+    updateFullscreen();
+
+});
 });
 closeFullscreen.addEventListener("click", function(){
 

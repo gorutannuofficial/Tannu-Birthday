@@ -536,7 +536,10 @@ async function startBlowDetection(){
 
                 blowStatus.innerHTML =
                 "🎉 Wish Accepted ❤️";
-
+setTimeout(function(){
+    cakeScreen.style.display = "none";
+    giftScreen.style.display = "flex";
+},1500);
                 stream.getTracks().forEach(track=>track.stop());
 
                 return;

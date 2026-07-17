@@ -383,21 +383,7 @@ galleryImage.addEventListener("touchend", function(e){
     lastTap = now;
 
 });
-    const now = new Date().getTime();
-
-    if(now - lastTap < 300){
-
-        likeHeart.classList.add("show");
-
-        setTimeout(function(){
-            likeHeart.classList.remove("show");
-        },800);
-
-    }
-
-    lastTap = now;
-
-});
+    
 /* ==========================
    CHAPTER 5 - LOVE REASONS
 ========================== */

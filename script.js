@@ -163,12 +163,19 @@ nextLetter.addEventListener("click", function(){
 
 nextPhoto.addEventListener("click", function(){
 
-    currentPhoto++;
+    if(currentPhoto === photos.length - 1){
 
-    if(currentPhoto >= photos.length){
-        currentPhoto = 0;
+        galleryScreen.style.display = "none";
+        loveScreen.style.display = "flex";
+
+        reasonIndex = 0;
+        reasonTitle.innerHTML = "Reason #1";
+        reasonText.innerHTML = reasons[0];
+
+        return;
     }
 
+    currentPhoto++;
     updatePhoto();
 
 });

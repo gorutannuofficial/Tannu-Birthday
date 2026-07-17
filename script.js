@@ -469,18 +469,7 @@ function updateTimeline(){
 
 }
 
-nextReason.addEventListener("click", function(){
 
-    if(reasonIndex >= reasons.length){
-
-        loveScreen.style.display = "none";
-        timelineScreen.style.display = "flex";
-
-        updateTimeline();
-
-    }
-
-});
 
 nextTimeline.addEventListener("click", function(){
 

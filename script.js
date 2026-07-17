@@ -112,10 +112,13 @@ const photos = [
     "photo4.jpg"
 ];
 const captions = [
-    "❤️ Caption 1",
-    "❤️ Caption 2",
-    "❤️ Caption 3",
-    "❤️ Caption 4"
+    "Tumhari is muskaan ne meri duniya ko aur bhi khoobsurat bana diya. Tumhare saath har pal meri sabse pyari yaad hai. ❤️",
+
+    "Suit me tumhari ye halki si muskaan aur chehre par aate hue baal... yahi andaaz mujhe baar-baar tumse pyaar karne ki wajah deta hai. 🌸",
+
+    "Jab tum apne baalon ko peeche karti ho, us pal tum aur bhi khoobsurat lagti ho. Ye meri favourite memories me se ek hai. 💖",
+
+    "Sardiyon me pink tum par aur bhi zyada khoobsurat lagta hai. Is photo ko dekhkar har baar dil bas tumhe hi dekhta reh jata hai. 💗"
 ];
 let currentPhoto = 0;
 

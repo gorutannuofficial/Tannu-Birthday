@@ -167,7 +167,7 @@ nextLetter.addEventListener("click", function(){
     galleryScreen.style.display = "flex";
 galleryScreen.scrollTop = 0;
     updatePhoto();
-
+startAutoSlide();
 });
 
 nextPhoto.addEventListener("click", function(){

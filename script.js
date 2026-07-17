@@ -433,3 +433,66 @@ nextReason.addEventListener("click", function(){
     }
 
 });
+/* ==========================
+   OUR LOVE JOURNEY
+========================== */
+
+const timelineScreen = document.getElementById("timeline-screen");
+const timelineTitle = document.getElementById("timelineTitle");
+const timelineText = document.getElementById("timelineText");
+const nextTimeline = document.getElementById("nextTimeline");
+
+const timelineData = [
+
+{
+title:"💖 First Meeting",
+text:"Jis din hum pehli baar mile, shayad us din hi meri life badal gayi."
+},
+
+{
+title:"🌸 Becoming Close",
+text:"Dheere dheere hum best friends bane aur phir ek dusre ki aadat ban gaye."
+},
+
+{
+title:"❤️ Forever Together",
+text:"Ab meri har khushi, har dua aur har future sirf tumhare saath hi hai."
+}
+
+];
+
+let timelineIndex = 0;
+
+function updateTimeline(){
+
+    timelineTitle.innerHTML = timelineData[timelineIndex].title;
+    timelineText.innerHTML = timelineData[timelineIndex].text;
+
+}
+
+nextReason.addEventListener("click", function(){
+
+    if(reasonIndex >= reasons.length){
+
+        loveScreen.style.display = "none";
+        timelineScreen.style.display = "flex";
+
+        updateTimeline();
+
+    }
+
+});
+
+nextTimeline.addEventListener("click", function(){
+
+    timelineIndex++;
+
+    if(timelineIndex >= timelineData.length){
+
+        timelineIndex = 0;
+
+    }
+
+    updateTimeline();
+
+});

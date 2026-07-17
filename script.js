@@ -488,7 +488,7 @@ nextTimeline.addEventListener("click", function(){
 
         timelineScreen.style.display = "none";
         cakeScreen.style.display = "flex";
-
+startBlowDetection();
         return;
     }
 

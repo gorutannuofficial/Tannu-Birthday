@@ -145,7 +145,22 @@ dots[currentPhoto].classList.add("active");
     },250);
 
 }
+let autoSlide;
 
+function startAutoSlide(){
+
+    clearInterval(autoSlide);
+
+    autoSlide = setInterval(function(){
+
+        if(currentPhoto < photos.length - 1){
+            currentPhoto++;
+            updatePhoto();
+        }
+
+    },6000);
+
+}
 nextLetter.addEventListener("click", function(){
 
     letterScreen.style.display = "none";

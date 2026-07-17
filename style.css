@@ -769,3 +769,8 @@ cursor: pointer;
     color:#fff;
     font-size:18px;
 }
+.flame.off{
+    opacity:0;
+    transform:translateX(-50%) scale(0);
+    transition:.4s;
+}

@@ -133,14 +133,8 @@ console.log(currentPhoto, photos[currentPhoto]);
         photoCounter.innerHTML = (currentPhoto + 1) + " / " + photos.length;
 const caption = document.getElementById("gallery-caption");
 
-caption.style.opacity = "0";
-
-setTimeout(function () {
-
-    caption.innerHTML = captions[currentPhoto];
-    caption.style.opacity = "1";
-
-}, 200);
+caption.innerHTML = captions[currentPhoto];
+caption.style.opacity = "1";
         const dots = document.querySelectorAll(".dot");
 
 dots.forEach((dot) => {

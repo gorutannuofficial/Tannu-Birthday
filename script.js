@@ -556,3 +556,26 @@ async function startBlowDetection(){
     }
 
 }
+
+
+/* ==========================
+CHAPTER 7 - GIFT BOX
+========================== */
+
+const giftScreen=document.getElementById("gift-screen");
+const giftBox=document.getElementById("giftBox");
+
+giftBox.addEventListener("click",function(){
+
+giftBox.classList.add("open");
+
+setTimeout(function(){
+
+alert("🎉 Surprise Opened ❤️");
+
+/* NEXT CHAPTER
+Gallery Open Hogi */
+
+},1500);
+
+});

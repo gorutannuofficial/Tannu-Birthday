@@ -435,7 +435,10 @@ const cakeScreen = document.getElementById("cake-screen");
 const timelineTitle = document.getElementById("timelineTitle");
 const timelineText = document.getElementById("timelineText");
 const nextTimeline = document.getElementById("nextTimeline");
-
+const flame1 = document.getElementById("flame1");
+const flame2 = document.getElementById("flame2");
+const flame3 = document.getElementById("flame3");
+const blowStatus = document.getElementById("blow-status");
 const timelineData = [
 
 {

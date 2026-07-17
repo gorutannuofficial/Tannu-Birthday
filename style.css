@@ -605,3 +605,41 @@ cursor: pointer;
         transform:translateY(0) scale(1);
     }
 }
+/* ==========================
+   OUR LOVE JOURNEY
+========================== */
+
+#timeline-screen{
+    display:none;
+    position:fixed;
+    inset:0;
+    justify-content:center;
+    align-items:center;
+    background:#000;
+    overflow:hidden;
+    z-index:60;
+}
+
+#timeline-screen .glass-card{
+    width:92%;
+    max-width:390px;
+    text-align:center;
+}
+
+#timelineTitle{
+    color:#ff4d8d;
+    margin-top:15px;
+    font-size:24px;
+}
+
+#timelineText{
+    margin:20px 0;
+    line-height:1.8;
+    font-size:18px;
+    color:#fff;
+    min-height:140px;
+}
+
+#nextTimeline{
+    margin-top:20px;
+}

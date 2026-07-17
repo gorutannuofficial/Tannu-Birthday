@@ -644,3 +644,16 @@ cursor: pointer;
 #nextTimeline{
     margin-top:20px;
 }
+#gallery-screen{
+    display:none;
+    position:fixed;
+    inset:0;
+    overflow-y:auto;
+    overflow-x:hidden;
+    padding:20px 0 120px;
+    z-index:30;
+}
+
+#gallery-screen::-webkit-scrollbar{
+    display:none;
+}

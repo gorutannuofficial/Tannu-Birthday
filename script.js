@@ -392,3 +392,37 @@ galleryImage.addEventListener("touchend", function(e){
     lastTap = now;
 
 });
+/* ==========================
+   CHAPTER 5 - LOVE REASONS
+========================== */
+
+const loveScreen = document.getElementById("love-screen");
+const reasonTitle = document.getElementById("reasonTitle");
+const reasonText = document.getElementById("reasonText");
+const nextReason = document.getElementById("nextReason");
+
+const reasons = [
+    "❤️ Tumhari smile meri duniya ki sabse khoobsurat cheez hai.",
+    "🌸 Tumhari masoomiyat har din mujhe aur zyada tumse pyaar karne par majboor karti hai.",
+    "💖 Tumhare saath har chhota pal bhi meri sabse badi khushi ban jata hai.",
+    "💍 Main har janam me sirf tumhe hi apni zindagi ka hissa banana chahta hoon."
+];
+
+let reasonIndex = 0;
+
+nextReason.addEventListener("click", function(){
+
+    reasonIndex++;
+
+    if(reasonIndex < reasons.length){
+
+        reasonTitle.innerHTML = "Reason #" + (reasonIndex + 1);
+        reasonText.innerHTML = reasons[reasonIndex];
+
+    }else{
+
+        alert("❤️ Chapter 5.2 Complete ❤️");
+
+    }
+
+});

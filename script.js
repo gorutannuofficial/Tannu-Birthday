@@ -495,3 +495,73 @@ nextTimeline.addEventListener("click", function(){
     updateTimeline();
 
 });
+/* ==========================
+   MIC BLOW DETECTION
+========================== */
+
+async function startBlowDetection(){
+
+    if(!navigator.mediaDevices){
+        blowStatus.innerHTML = "❌ Mic not supported";
+        return;
+    }
+
+    try{
+
+        const stream = await navigator.mediaDevices.getUserMedia({
+            audio:true
+        });
+
+        const audioContext = new AudioContext();
+
+        const analyser = audioContext.createAnalyser();
+
+        const microphone =
+            audioContext.createMediaStreamSource(stream);
+
+        microphone.connect(analyser);
+
+        analyser.fftSize = 256;
+
+        const data = new Uint8Array(analyser.frequencyBinCount);
+
+        function detect(){
+
+            analyser.getByteFrequencyData(data);
+
+            let volume = 0;
+
+            for(let i=0;i<data.length;i++){
+                volume += data[i];
+            }
+
+            volume /= data.length;
+
+            if(volume > 45){
+
+                flame1.classList.add("off");
+                flame2.classList.add("off");
+                flame3.classList.add("off");
+
+                blowStatus.innerHTML =
+                "🎉 Wish Accepted ❤️";
+
+                stream.getTracks().forEach(track=>track.stop());
+
+                return;
+            }
+
+            requestAnimationFrame(detect);
+
+        }
+
+        detect();
+
+    }catch(err){
+
+        blowStatus.innerHTML =
+        "🎤 Please allow microphone.";
+
+    }
+
+}

@@ -419,11 +419,7 @@ nextReason.addEventListener("click", function(){
         reasonTitle.innerHTML = "Reason #" + (reasonIndex + 1);
         reasonText.innerHTML = reasons[reasonIndex];
 
-    }else{
-
-        alert("❤️ Chapter 5.2 Complete ❤️");
-
-    }
+    
 
 });
 /* ==========================

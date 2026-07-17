@@ -666,3 +666,11 @@ cursor: pointer;
 #gallery-screen::-webkit-scrollbar{
     display:none;
 }
+.gallery-box{
+    position: relative;
+    z-index: 10;
+}
+
+#hearts-container{
+    z-index: 1;
+}

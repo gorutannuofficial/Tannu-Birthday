@@ -419,7 +419,13 @@ nextReason.addEventListener("click", function(){
         reasonTitle.innerHTML = "Reason #" + (reasonIndex + 1);
         reasonText.innerHTML = reasons[reasonIndex];
 
-    
+    }else{
+
+        loveScreen.style.display = "none";
+        timelineScreen.style.display = "flex";
+        updateTimeline();
+
+    }
 
 });
 /* ==========================

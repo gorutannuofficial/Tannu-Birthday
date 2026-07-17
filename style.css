@@ -650,12 +650,19 @@ cursor: pointer;
     display:none;
     position:fixed;
     inset:0;
+
+    justify-content:center;
+    align-items:flex-start;
+
     overflow-y:auto;
     overflow-x:hidden;
-    padding:20px 0 120px;
+
+    padding:25px 0 120px;
+
+    background:#000;
+
     z-index:30;
 }
-
 #gallery-screen::-webkit-scrollbar{
     display:none;
 }

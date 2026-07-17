@@ -261,7 +261,6 @@ galleryImage.addEventListener("click", function(){
     updateFullscreen();
 
 });
-});
 closeFullscreen.addEventListener("click", function(){
 
     fullscreenView.style.display = "none";

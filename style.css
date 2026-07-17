@@ -674,3 +674,98 @@ cursor: pointer;
 #hearts-container{
     z-index: 1;
 }
+/* ==========================
+   CHAPTER 6 - BIRTHDAY CAKE
+========================== */
+
+#cake-screen{
+    display:none;
+    position:fixed;
+    inset:0;
+    justify-content:center;
+    align-items:center;
+    background:#000;
+    overflow:hidden;
+    z-index:70;
+}
+
+.cake-container{
+    text-align:center;
+    z-index:5;
+}
+
+.cake-text{
+    margin:15px 0 30px;
+    font-size:18px;
+    color:#fff;
+}
+
+.cake{
+    position:relative;
+    width:220px;
+    margin:auto;
+}
+
+.cake-bottom{
+    width:220px;
+    height:70px;
+    background:#ff69b4;
+    border-radius:0 0 25px 25px;
+}
+
+.cake-middle{
+    width:180px;
+    height:60px;
+    background:#ffc0cb;
+    margin:auto;
+}
+
+.cake-top{
+    width:140px;
+    height:50px;
+    background:#fff;
+    margin:auto;
+    border-radius:20px 20px 0 0;
+}
+
+.candles{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    margin-bottom:-5px;
+}
+
+.candle{
+    width:10px;
+    height:40px;
+    background:#fff;
+    position:relative;
+}
+
+.flame{
+    width:14px;
+    height:20px;
+    background:gold;
+    border-radius:50%;
+    position:absolute;
+    top:-18px;
+    left:50%;
+    transform:translateX(-50%);
+    animation:flicker .2s infinite alternate;
+    box-shadow:0 0 18px orange;
+}
+
+@keyframes flicker{
+    from{
+        transform:translateX(-50%) scale(1);
+    }
+    to{
+        transform:translateX(-50%) scale(.8);
+    }
+}
+
+#blow-status{
+    margin-top:30px;
+    color:#fff;
+    font-size:18px;
+}

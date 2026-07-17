@@ -431,6 +431,7 @@ nextReason.addEventListener("click", function(){
 ========================== */
 
 const timelineScreen = document.getElementById("timeline-screen");
+const cakeScreen = document.getElementById("cake-screen");
 const timelineTitle = document.getElementById("timelineTitle");
 const timelineText = document.getElementById("timelineText");
 const nextTimeline = document.getElementById("nextTimeline");

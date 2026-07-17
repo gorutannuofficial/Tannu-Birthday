@@ -121,7 +121,7 @@ const captions = [
     "Sardiyon me pink tum par aur bhi zyada khoobsurat lagta hai. Is photo ko dekhkar har baar dil bas tumhe hi dekhta reh jata hai. 💗"
 ];
 let currentPhoto = 0;
-
+let autoSlide;
 function updatePhoto(){
 galleryScreen.scrollTop = 0;
     galleryImage.classList.add("photo-animate");

@@ -483,8 +483,10 @@ nextTimeline.addEventListener("click", function(){
 
     if(timelineIndex >= timelineData.length){
 
-        timelineIndex = 0;
+        timelineScreen.style.display = "none";
+        cakeScreen.style.display = "flex";
 
+        return;
     }
 
     updateTimeline();

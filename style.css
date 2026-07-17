@@ -557,3 +557,51 @@ cursor: pointer;
     transform:translate(-50%,-50%) scale(1.2);
     opacity:1;
 }
+/* ==========================
+   CHAPTER 5 - LOVE SCREEN
+========================== */
+
+#love-screen{
+    display:none;
+    position:fixed;
+    inset:0;
+    justify-content:center;
+    align-items:center;
+    background:#000;
+    overflow:hidden;
+    z-index:50;
+}
+
+#love-screen .glass-card{
+    width:90%;
+    max-width:380px;
+    animation:fadeLove .5s ease;
+}
+
+#reasonTitle{
+    color:#ff4d8d;
+    margin:15px 0;
+}
+
+#reasonText{
+    color:#fff;
+    font-size:20px;
+    line-height:1.8;
+    min-height:170px;
+    margin-top:20px;
+}
+
+#nextReason{
+    margin-top:25px;
+}
+
+@keyframes fadeLove{
+    from{
+        opacity:0;
+        transform:translateY(25px) scale(.95);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+}

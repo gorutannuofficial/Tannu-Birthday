@@ -150,7 +150,7 @@ nextLetter.addEventListener("click", function(){
 
     letterScreen.style.display = "none";
     galleryScreen.style.display = "flex";
-
+galleryScreen.scrollTop = 0;
     updatePhoto();
 
 });

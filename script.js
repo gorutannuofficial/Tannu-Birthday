@@ -480,6 +480,7 @@ nextTimeline.addEventListener("click", function(){
         timelineScreen.style.display = "none";
         cakeScreen.style.display = "flex";
 startBlowDetection();
+if(volume > 45){
         return;
     }
 

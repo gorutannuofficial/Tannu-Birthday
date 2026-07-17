@@ -145,7 +145,6 @@ dots[currentPhoto].classList.add("active");
     },250);
 
 }
-let autoSlide;
 
 function startAutoSlide(){
 

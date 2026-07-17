@@ -123,7 +123,7 @@ const captions = [
 let currentPhoto = 0;
 
 function updatePhoto(){
-
+galleryScreen.scrollTop = 0;
     galleryImage.classList.add("photo-animate");
 
     setTimeout(function(){

@@ -579,7 +579,11 @@ giftScreen.style.display = "none";
 finalScreen.style.display = "flex";
 
 showMemory();
+bgMusic.pause();
 
+const birthdaySong = new Audio("happybirthday.mp3");
+
+birthdaySong.play();
 /* NEXT CHAPTER
 Gallery Open Hogi */
 

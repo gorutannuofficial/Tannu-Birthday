@@ -590,7 +590,6 @@ Gallery Open Hogi */
 
 });
 
-}
 
 /* ==========================
 CHAPTER 8.3 - MEET MEMORIES

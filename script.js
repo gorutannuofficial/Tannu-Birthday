@@ -576,9 +576,9 @@ giftBox.classList.add("open");
 setTimeout(function(){
 
 giftScreen.style.display = "none";
-finalScreen.style.display = "flex";
+meetScreen.style.display = "flex";
 
-showMemory();
+updateMeet();
 bgMusic.pause();
 
 const birthdaySong = new Audio("happybirthday.mp3");

@@ -642,3 +642,64 @@ setInterval(function(){
     }
 
 },5000);
+/* ==========================
+CHAPTER 8.2 - MEMORY CONTROLS
+========================== */
+
+const memoryPlace = document.getElementById("memory-place");
+const memoryDate = document.getElementById("memory-date");
+const memoryCount = document.getElementById("memory-count");
+
+const prevMemory = document.getElementById("prevMemory");
+const nextMemory = document.getElementById("nextMemory");
+
+const places = [
+    "📍 First Meet",
+    "📍 Second Meet",
+    "📍 Third Meet",
+    "📍 Latest Meet"
+];
+
+const dates = [
+    "📅 Date 1",
+    "📅 Date 2",
+    "📅 Date 3",
+    "📅 Date 4"
+];
+
+function updateMemory(){
+
+    memoryPhoto.src = memoryPhotos[memoryIndex];
+    memoryTitle.innerHTML = memoryTitles[memoryIndex];
+    memoryText.innerHTML = memoryTexts[memoryIndex];
+
+    memoryPlace.innerHTML = places[memoryIndex];
+    memoryDate.innerHTML = dates[memoryIndex];
+
+    memoryCount.innerHTML =
+    (memoryIndex + 1) + " / " + memoryPhotos.length;
+}
+
+prevMemory.addEventListener("click",function(){
+
+    memoryIndex--;
+
+    if(memoryIndex < 0){
+        memoryIndex = memoryPhotos.length - 1;
+    }
+
+    updateMemory();
+
+});
+
+nextMemory.addEventListener("click",function(){
+
+    memoryIndex++;
+
+    if(memoryIndex >= memoryPhotos.length){
+        memoryIndex = 0;
+    }
+
+    updateMemory();
+
+});

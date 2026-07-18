@@ -852,3 +852,54 @@ transform:
 translateY(-80px)
 rotate(-12deg);
 }
+/* ==========================
+CHAPTER 8 - OUR MEMORIES
+========================== */
+
+#final-screen{
+    display:none;
+    position:fixed;
+    inset:0;
+    z-index:999;
+    background:#000;
+    color:white;
+    text-align:center;
+    overflow:hidden;
+    padding-top:40px;
+}
+
+.memory-photo{
+    width:85%;
+    max-width:340px;
+    border-radius:20px;
+    border:4px solid white;
+    box-shadow:0 0 30px hotpink;
+    margin-top:20px;
+    animation:zoomPhoto 6s infinite alternate;
+}
+
+#memory-title{
+    margin-top:20px;
+    font-size:28px;
+    color:#ff8fd8;
+}
+
+#memory-text{
+    width:85%;
+    margin:auto;
+    margin-top:15px;
+    line-height:1.7;
+    font-size:18px;
+}
+
+@keyframes zoomPhoto{
+
+from{
+transform:scale(1);
+}
+
+to{
+transform:scale(1.08);
+}
+
+}

@@ -699,3 +699,78 @@ nextMemory.addEventListener("click",function(){
     updateMemory();
 
 });
+/* ==========================
+CHAPTER 8.3 - MEET MEMORIES
+========================== */
+
+const meetScreen = document.getElementById("meet-screen");
+const meetImage = document.getElementById("meet-image");
+const meetTitle = document.getElementById("meet-title");
+const meetDate = document.getElementById("meet-date");
+const meetCaption = document.getElementById("meet-caption");
+const nextMeet = document.getElementById("nextMeet");
+
+const meetData = [
+
+{
+image:"meet1.jpg",
+title:"❤️ First Meet",
+date:"14 December 2024 • Cafe",
+caption:"The day my heart found its favourite person. Our first meeting changed my life forever."
+},
+
+{
+image:"meet2.jpg",
+title:"🌳 Second Meet",
+date:"15 December 2024 • Park",
+caption:"Every moment with you made me realize that happiness has your smile."
+},
+
+{
+image:"meet3.jpg",
+title:"💖 Third Meet",
+date:"07 November 2025 • Sastri Park",
+caption:"Meeting you again felt like my favourite chapter had started once more."
+},
+
+{
+image:"meet4.jpg",
+title:"🌸 Fourth Meet",
+date:"12 November 2025 • Sastri Park",
+caption:"Another beautiful day, another unforgettable memory with you."
+},
+
+{
+image:"meet5.jpg",
+title:"🥰 Fifth Meet",
+date:"28 April 2026 • Sastri Park",
+caption:"Every meeting made our bond stronger than before."
+},
+
+{
+image:"meet6.jpg",
+title:"❤️ Sixth Meet",
+date:"07 May 2026 • First Time In Privacy",
+caption:"One of the most precious memories of my life. Thank you for trusting me."
+}
+
+];
+
+let meetIndex = 0;
+
+function updateMeet(){
+
+    meetImage.src = meetData[meetIndex].image;
+    meetTitle.innerHTML = meetData[meetIndex].title;
+    meetDate.innerHTML = meetData[meetIndex].date;
+    meetCaption.innerHTML = meetData[meetIndex].caption;
+
+}
+
+nextMeet.addEventListener("click",function(){
+
+    meetIndex++;
+
+    if(meetIndex >= meetData.length){
+
+       

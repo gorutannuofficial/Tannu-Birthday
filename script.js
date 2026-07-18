@@ -575,7 +575,10 @@ giftBox.classList.add("open");
 
 setTimeout(function(){
 
-alert("🎉 Surprise Opened ❤️");
+giftScreen.style.display = "none";
+finalScreen.style.display = "flex";
+
+showMemory();
 
 /* NEXT CHAPTER
 Gallery Open Hogi */

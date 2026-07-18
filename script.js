@@ -694,11 +694,7 @@ prevMemory.addEventListener("click",function(){
 
 nextMemory.addEventListener("click",function(){
 
-    memoryIndex++;
-
-    if(memoryIndex >= memoryPhotos.length){
-        memoryIndex = 0;
-    }
+    
 
     updateMemory();
 

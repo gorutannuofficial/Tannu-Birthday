@@ -903,3 +903,54 @@ transform:scale(1.08);
 }
 
 }
+/* ==========================
+CHAPTER 8.2 - MEMORY DETAILS
+========================== */
+
+.memory-info{
+    margin-top:18px;
+    text-align:center;
+}
+
+#memory-place{
+    color:#ff4d8d;
+    font-size:22px;
+    margin-bottom:8px;
+}
+
+#memory-date{
+    color:#ffffff;
+    font-size:17px;
+    opacity:.85;
+}
+
+.memory-controls{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    margin-top:25px;
+}
+
+.memory-controls button{
+    flex:1;
+    max-width:150px;
+    padding:14px;
+    border:none;
+    border-radius:16px;
+    background:#ff4d8d;
+    color:#fff;
+    font-size:16px;
+    cursor:pointer;
+    box-shadow:0 0 18px rgba(255,77,141,.45);
+}
+
+.memory-controls button:active{
+    transform:scale(.96);
+}
+
+#memory-count{
+    margin-top:18px;
+    color:#fff;
+    font-size:18px;
+    font-weight:600;
+}

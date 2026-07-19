@@ -983,10 +983,15 @@ margin:10px 0;
 }
 
 #meet-caption{
-color:white;
-font-size:18px;
-line-height:30px;
-margin:20px;
+    color:white;
+    font-size:18px;
+    line-height:1.8;
+    width:90%;
+    margin:15px auto;
+    height:auto;
+    overflow:visible;
+    white-space:normal;
+    word-break:break-word;
 }
 
 #nextMeet{

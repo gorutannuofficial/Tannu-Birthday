@@ -608,42 +608,42 @@ const meetData = [
 image:"meet1.jpg",
 title:"❤️ First Meet",
 date:"14 December 2024 • Cafe",
-caption:"The day my heart found its favourite person. Our first meeting changed my life forever."
+caption:"❤️ The day my heart found its favorite person. Our very first meeting at the cafe... I was nervous, excited, and unknowingly falling in love with you."
 },
 
 {
 image:"meet2.jpg",
 title:"🌳 Second Meet",
 date:"15 December 2024 • Park",
-caption:"Every moment with you made me realize that happiness has your smile."
+caption:"🌳 One more day, one more memory. Walking together in the park made me realize that every place becomes beautiful when you're with me."
 },
 
 {
 image:"meet3.jpg",
 title:"💖 Third Meet",
 date:"07 November 2025 • Sastri Park",
-caption:"Meeting you again felt like my favourite chapter had started once more."
+caption:"💖 After a long time, meeting you again at Sastri Park felt like time had stopped just for us."
 },
 
 {
 image:"meet4.jpg",
 title:"🌸 Fourth Meet",
 date:"12 November 2025 • Sastri Park",
-caption:"Another beautiful day, another unforgettable memory with you."
+caption:"🌸 Another unforgettable day... another beautiful smile... another memory I never want to lose."
 },
 
 {
 image:"meet5.jpg",
-title:"🥰 Fifth Meet",
+title:"🥹 Fifth Meet",
 date:"28 April 2026 • Sastri Park",
-caption:"Every meeting made our bond stronger than before."
+caption:"🥹 Every meeting made us stronger. Every goodbye only made me wait more eagerly for the next hello."
 },
 
 {
 image:"meet6.jpg",
 title:"❤️ Sixth Meet",
 date:"07 May 2026 • First Time In Privacy",
-caption:"One of the most precious memories of my life. Thank you for trusting me."
+caption:"❤️ A day that became one of the most special memories of my life. Thank you for trusting me and giving me moments I'll always treasure."
 }
 
 ];

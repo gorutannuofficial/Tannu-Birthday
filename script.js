@@ -621,7 +621,7 @@ caption:"🌳 One more day, one more memory. Walking together in the park made m
 {
 image:"meet3.jpg",
 title:"💖 Third Meet",
-date:"07 November 2025 • Sastri Park",
+date:"07 November 2025 • Park",
 caption:"💖 After a long time, meeting you again at Sastri Park felt like time had stopped just for us."
 },
 

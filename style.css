@@ -997,3 +997,59 @@ margin:10px 0;
 #nextMeet{
 margin-top:20px;
 }
+/* ==========================
+CHAPTER 11 - GRAND FINALE
+========================== */
+
+#finale-screen{
+    display:none;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    padding:20px;
+    text-align:center;
+}
+
+#finale-screen .glass-card{
+    width:90%;
+    max-width:600px;
+    padding:35px 25px;
+    border-radius:25px;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,0.2);
+    box-shadow:0 0 35px rgba(255,105,180,0.35);
+}
+
+#finale-screen h1{
+    color:#fff;
+    font-size:34px;
+    margin-bottom:25px;
+    text-shadow:0 0 20px hotpink;
+}
+
+#finale-text{
+    color:#fff;
+    font-size:20px;
+    line-height:1.9;
+    white-space:pre-line;
+    margin-bottom:30px;
+}
+
+#finaleBtn{
+    padding:15px 35px;
+    border:none;
+    border-radius:50px;
+    background:linear-gradient(45deg,#ff4fa3,#ff79c6);
+    color:#fff;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+    box-shadow:0 0 20px hotpink;
+}
+
+#finaleBtn:hover{
+    transform:scale(1.08);
+    box-shadow:0 0 35px deeppink;
+}

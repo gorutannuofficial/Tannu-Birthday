@@ -665,13 +665,10 @@ nextMeet.addEventListener("click", function(){
 
     if(meetIndex >= meetData.length){
 
-        meetIndex = 0;
+    showFinale();
 
-        // Yahan Chapter 9 start hoga
-        alert("❤️ To Be Continued... ❤️");
-
-        return;
-    }
+    return;
+}
 
     updateMeet();
 

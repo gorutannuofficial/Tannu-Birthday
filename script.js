@@ -724,3 +724,8 @@ function showFinale(){
     },35);
 
 }
+finaleBtn.addEventListener("click",function(){
+
+    alert("❤️ The End ❤️\n\nForever Yours,\nGaurav ❤️");
+
+});

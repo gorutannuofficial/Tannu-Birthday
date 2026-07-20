@@ -703,7 +703,7 @@ Happy Birthday My Love.
 I Love You Forever. ❤️`;
 
 function showFinale(){
-
+meetIndex = 0;
     meetScreen.style.display = "none";
     finaleScreen.style.display = "flex";
 

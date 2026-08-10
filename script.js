@@ -830,6 +830,6 @@ breakupBtn.addEventListener("click", function(){
 
     breakupScreen.style.display = "none";
 
-    // Chapter 3 yahan se start hoga
+    showBestWish();
 
 });

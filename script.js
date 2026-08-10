@@ -673,62 +673,7 @@ nextMeet.addEventListener("click", function(){
     updateMeet();
 
 });
-/* ==========================
-CHAPTER 11 - GRAND FINALE
-========================== */
 
-const finaleScreen = document.getElementById("finale-screen");
-const finaleText = document.getElementById("finale-text");
-const finaleBtn = document.getElementById("finaleBtn");
-
-const finaleMessage = `❤️ Dear Tannu ❤️
-
-If you are reading this...
-
-It means you completed every memory, every surprise, and every little piece of my heart that I wanted to share with you.
-
-Thank you for coming into my life.
-
-You are my safest place,
-my biggest happiness,
-my best friend,
-and my forever love.
-
-No matter what happens in life...
-
-I promise I will always choose you.
-
-Happy Birthday My Love.
-
-I Love You Forever. ❤️`;
-
-function showFinale(){
-meetIndex = 0;
-    meetScreen.style.display = "none";
-    finaleScreen.style.display = "flex";
-
-    finaleText.innerHTML = "";
-
-    let i = 0;
-
-    const typing = setInterval(function(){
-
-        finaleText.innerHTML += finaleMessage.charAt(i);
-
-        i++;
-
-        if(i >= finaleMessage.length){
-            clearInterval(typing);
-        }
-
-    },35);
-
-}
-finaleBtn.addEventListener("click",function(){
-
-    alert("❤️ The End ❤️\n\nForever Yours,\nGaurav ❤️");
-
-});
 /* ==========================
    CHAPTER 1 - THANK YOU
 ========================== */

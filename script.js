@@ -884,7 +884,11 @@ function showBestWish(){
     },35);
 
 }
+bestwishBtn.addEventListener("click", function(){
 
+    showPain();
+
+});
 
 /* ==========================
    CHAPTER 4 - MY PAIN

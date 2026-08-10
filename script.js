@@ -774,6 +774,9 @@ function showThankYou(){
 thankyouBtn.addEventListener("click", function(){
 
     thankyouScreen.style.display = "none";
+
+    showBreakup();
+
 });
     /* ==========================
    CHAPTER 2 - BREAK UP

@@ -951,12 +951,12 @@ bestwishBtn.addEventListener("click", function(){
 
     showPain();
 
+});
+
 
 painBtn.addEventListener("click", function(){
 
     painScreen.style.display = "none";
-
-
 
 });
 /* ==========================

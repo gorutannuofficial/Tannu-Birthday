@@ -774,7 +774,62 @@ function showThankYou(){
 thankyouBtn.addEventListener("click", function(){
 
     thankyouScreen.style.display = "none";
+});
+    /* ==========================
+   CHAPTER 2 - BREAK UP
+========================== */
 
-    // Chapter 2 yahan se start hoga
+const breakupScreen = document.getElementById("breakup-screen");
+const breakupText = document.getElementById("breakup-text");
+const breakupBtn = document.getElementById("breakupBtn");
+
+const breakupMessage = `Tannu,
+
+Shayad hum dono ke liye ab alag raaste choose karna hi behtar hai.
+
+Humne saath mein bahut saare beautiful moments share kiye,
+aur un memories ki value meri life mein hamesha rahegi.
+
+Lekin har relationship ka ek waqt aata hai
+jab humein accept karna padta hai ki cheezein badal gayi hain.
+
+Isliye main yahin humari journey ko end kar raha hoon.
+
+Main tumhe blame nahi karta,
+aur na hi tumse koi complaint hai.
+
+Bas ab humein apni-apni life mein aage badhna hai.
+
+Goodbye, Tannu. ❤️`;
+
+function showBreakup(){
+
+    breakupScreen.style.display = "flex";
+
+    breakupText.innerHTML = "";
+
+    let i = 0;
+
+    const typing = setInterval(function(){
+
+        breakupText.innerHTML += breakupMessage.charAt(i);
+
+        i++;
+
+        if(i >= breakupMessage.length){
+
+            clearInterval(typing);
+
+        }
+
+    },35);
+
+}
+
+breakupBtn.addEventListener("click", function(){
+
+    breakupScreen.style.display = "none";
+
+    // Chapter 3 yahan se start hoga
 
 });

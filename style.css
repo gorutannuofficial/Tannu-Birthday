@@ -1053,3 +1053,30 @@ CHAPTER 11 - GRAND FINALE
     transform:scale(1.08);
     box-shadow:0 0 35px deeppink;
 }
+/* ==========================
+   SCREENSHOT / COPY PROTECTION
+========================== */
+
+body {
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+}
+
+img {
+    -webkit-user-drag: none;
+    user-drag: none;
+    pointer-events: auto;
+}
+
+input,
+button {
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+/* Prevent image dragging */
+img {
+    user-select: none;
+    -webkit-user-drag: none;
+}

@@ -665,7 +665,7 @@ nextMeet.addEventListener("click", function(){
 
     if(meetIndex >= meetData.length){
 
-    showFinale();
+    showThankYou();
 
     return;
 }

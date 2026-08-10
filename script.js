@@ -958,6 +958,37 @@ painBtn.addEventListener("click", function(){
 
     painScreen.style.display = "none";
 
-    // Chapter 5 yahan se start hoga
+
+
+});
+/* ==========================
+   BASIC SCREEN PROTECTION
+========================== */
+
+// Disable right click
+document.addEventListener("contextmenu", function(e){
+    e.preventDefault();
+});
+
+// Disable common keyboard shortcuts
+document.addEventListener("keydown", function(e){
+
+    if(
+        e.key === "PrintScreen" ||
+        (e.ctrlKey && e.key === "u") ||
+        (e.ctrlKey && e.shiftKey && e.key === "I") ||
+        (e.ctrlKey && e.shiftKey && e.key === "J")
+    ){
+        e.preventDefault();
+    }
+
+});
+
+// Prevent long press on images
+document.addEventListener("dragstart", function(e){
+
+    if(e.target.tagName === "IMG"){
+        e.preventDefault();
+    }
 
 });

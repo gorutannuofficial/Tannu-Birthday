@@ -833,3 +833,59 @@ breakupBtn.addEventListener("click", function(){
     showBestWish();
 
 });
+/* ==========================
+   CHAPTER 3 - ALL THE BEST
+========================== */
+
+const bestwishScreen = document.getElementById("bestwish-screen");
+const bestwishText = document.getElementById("bestwish-text");
+const bestwishBtn = document.getElementById("bestwishBtn");
+
+const bestwishMessage = `I genuinely wish you the best for your new life.
+
+May you find happiness,
+peace, success and everything you deserve.
+
+I hope your future is filled with
+beautiful moments and good people.
+
+Whatever happens from here,
+I hope life treats you kindly.
+
+Take care of yourself.
+
+And always keep smiling. ❤️
+
+All the best for your new life. 🌸`;
+
+function showBestWish(){
+
+    bestwishScreen.style.display = "flex";
+
+    bestwishText.innerHTML = "";
+
+    let i = 0;
+
+    const typing = setInterval(function(){
+
+        bestwishText.innerHTML += bestwishMessage.charAt(i);
+
+        i++;
+
+        if(i >= bestwishMessage.length){
+
+            clearInterval(typing);
+
+        }
+
+    },35);
+
+}
+
+bestwishBtn.addEventListener("click", function(){
+
+    bestwishScreen.style.display = "none";
+
+    // Chapter 4 yahan se start hoga
+
+});

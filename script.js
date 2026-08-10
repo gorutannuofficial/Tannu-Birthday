@@ -886,6 +886,78 @@ bestwishBtn.addEventListener("click", function(){
 
     bestwishScreen.style.display = "none";
 
-    // Chapter 4 yahan se start hoga
+
+});
+/* ==========================
+   CHAPTER 4 - MY PAIN
+========================== */
+
+const painScreen = document.getElementById("pain-screen");
+const painText = document.getElementById("pain-text");
+const painBtn = document.getElementById("painBtn");
+
+const painMessage = `Sach kahun toh...
+
+Main tumse bahut zyada pyaar karta hoon.
+Tumse baat kiye bina rehna mere liye bahut mushkil ho raha hai.
+
+Main tumhe har waqt miss karta hoon.
+Kabhi-kabhi aankhon mein aansu aa jaate hain
+aur samajh nahi aata ki apne emotions ko kaise sambhalun.
+
+Mera routine bhi bigad gaya hai.
+Khana time par nahi kha pa raha,
+apna dhyaan nahi rakh pa raha,
+aur bas baar-baar tumhari yaadein dimaag mein chalti rehti hain.
+
+Mujhe pata hai ki ab humein apni-apni zindagi mein aage badhna hai,
+lekin dil ko ye baat samajhne mein waqt lag raha hai.
+
+Tum mere liye bahut important thi,
+aur jo kuch humne saath mein jiya,
+woh meri life ki ek bahut special memory hamesha rahega.
+
+Main tumhe rokna nahi chahta.
+Bas itna chahta hoon ki tum ye samjho
+ki tumse door hona mere liye bilkul easy nahi tha.
+
+Shayad waqt ke saath sab theek ho jayega...
+Lekin aaj bhi,
+main tumhe bahut miss karta hoon. ❤️`;
+
+function showPain(){
+
+    bestwishScreen.style.display = "none";
+    painScreen.style.display = "flex";
+
+    painText.innerHTML = "";
+
+    let i = 0;
+
+    const typing = setInterval(function(){
+
+        painText.innerHTML += painMessage.charAt(i);
+
+        i++;
+
+        if(i >= painMessage.length){
+            clearInterval(typing);
+        }
+
+    },35);
+
+}
+
+bestwishBtn.addEventListener("click", function(){
+
+    showPain();
+
+});
+
+painBtn.addEventListener("click", function(){
+
+    painScreen.style.display = "none";
+
+    // Chapter 5 yahan se start hoga
 
 });

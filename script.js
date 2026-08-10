@@ -18,8 +18,60 @@ const galleryImage = document.getElementById("gallery-image");
 loadingScreen.style.display = "none";
 welcomeScreen.style.display = "none";
 
+const countdownBox = document.getElementById("countdown-box");
+
+const daysEl = document.getElementById("days");
+const hoursEl = document.getElementById("hours");
+const minutesEl = document.getElementById("minutes");
+const secondsEl = document.getElementById("seconds");
+
+// 🎂 Surprise unlock time
+const unlockTime = new Date("2026-08-13T00:01:00+05:30").getTime();
+
+function updateCountdown(){
+
+    const now = new Date().getTime();
+    const distance = unlockTime - now;
+
+    if(distance <= 0){
+
+        countdownBox.style.display = "none";
+
+        return true;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor(
+        (distance % (1000 * 60 * 60 * 24)) /
+        (1000 * 60 * 60)
+    );
+
+    const minutes = Math.floor(
+        (distance % (1000 * 60 * 60)) /
+        (1000 * 60)
+    );
+
+    const seconds = Math.floor(
+        (distance % (1000 * 60)) /
+        1000
+    );
+
+    daysEl.innerHTML = days;
+    hoursEl.innerHTML = hours;
+    minutesEl.innerHTML = minutes;
+    secondsEl.innerHTML = seconds;
+
+    return false;
+}
+
+// Countdown automatically update hoga
+setInterval(updateCountdown, 1000);
+updateCountdown();
+
+
 unlockBtn.addEventListener("click", function(){
 
+    // 🔐 Password check
     if(passwordInput.value.trim() !== PASSWORD){
 
         error.innerHTML = "❌ Wrong Password";
@@ -32,8 +84,28 @@ unlockBtn.addEventListener("click", function(){
         return;
     }
 
+    // 🎂 Birthday time check
+    const now = new Date().getTime();
+
+    if(now < unlockTime){
+
+        error.innerHTML =
+        "⏳ Surprise abhi locked hai... Countdown khatam hone ka wait karo ❤️";
+
+        passwordInput.style.border =
+        "2px solid #ff4d8d";
+
+        countdownBox.style.display = "block";
+
+        updateCountdown();
+
+        return;
+    }
+
+    // ✅ Password + time dono correct
     error.innerHTML = "";
     passwordInput.style.border = "none";
+    countdownBox.style.display = "none";
 
     passwordScreen.style.display = "none";
     loadingScreen.style.display = "flex";
@@ -46,6 +118,7 @@ unlockBtn.addEventListener("click", function(){
 
         progressBar.style.width = progress + "%";
         progressText.innerHTML = progress + "%";
+
         if(progress >= 100){
 
             clearInterval(timer);

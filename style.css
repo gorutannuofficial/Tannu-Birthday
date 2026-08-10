@@ -1080,3 +1080,43 @@ img {
     user-select: none;
     -webkit-user-drag: none;
 }
+/* ==========================
+   BIRTHDAY AFTER-BREAKUP SCREENS
+========================== */
+
+#thankyou-screen,
+#breakup-screen,
+#bestwish-screen,
+#pain-screen{
+    display:none;
+    position:fixed;
+    inset:0;
+    justify-content:center;
+    align-items:center;
+    background:#000;
+    overflow-y:auto;
+    overflow-x:hidden;
+    padding:25px 0;
+    z-index:80;
+}
+
+#thankyou-screen .glass-card,
+#breakup-screen .glass-card,
+#bestwish-screen .glass-card,
+#pain-screen .glass-card{
+    width:90%;
+    max-width:500px;
+    max-height:90vh;
+    overflow-y:auto;
+    text-align:center;
+}
+
+#thankyou-text,
+#breakup-text,
+#bestwish-text,
+#pain-text{
+    color:#fff;
+    font-size:18px;
+    line-height:1.8;
+    white-space:pre-line;
+}

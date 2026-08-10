@@ -885,10 +885,6 @@ function showBestWish(){
 
 }
 
-bestwishBtn.addEventListener("click", function(){
-
-    bestwishScreen.style.display = "none";
-
 
 });
 /* ==========================

@@ -901,6 +901,11 @@ bestwishBtn.addEventListener("click", function(){
 
 });
 
+painBtn.addEventListener("click", function(){
+
+    painScreen.style.display = "none";
+
+});
 
 /* ==========================
    BASIC SCREEN PROTECTION

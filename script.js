@@ -951,7 +951,6 @@ bestwishBtn.addEventListener("click", function(){
 
     showPain();
 
-});
 
 painBtn.addEventListener("click", function(){
 

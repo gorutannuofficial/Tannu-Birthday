@@ -729,3 +729,52 @@ finaleBtn.addEventListener("click",function(){
     alert("❤️ The End ❤️\n\nForever Yours,\nGaurav ❤️");
 
 });
+/* ==========================
+   CHAPTER 1 - THANK YOU
+========================== */
+
+const thankyouScreen = document.getElementById("thankyou-screen");
+const thankyouText = document.getElementById("thankyou-text");
+const thankyouBtn = document.getElementById("thankyouBtn");
+
+const thankyouMessage = `Thank you so much for understanding me,
+my problems, and every situation I went through.
+
+Thank you for being there during the moments
+when things were not easy for me.
+
+I will always be grateful for
+every understanding moment,
+every conversation,
+and every memory we shared. ❤️`;
+
+function showThankYou(){
+
+    meetScreen.style.display = "none";
+    thankyouScreen.style.display = "flex";
+
+    thankyouText.innerHTML = "";
+
+    let i = 0;
+
+    const typing = setInterval(function(){
+
+        thankyouText.innerHTML += thankyouMessage.charAt(i);
+
+        i++;
+
+        if(i >= thankyouMessage.length){
+            clearInterval(typing);
+        }
+
+    },35);
+
+}
+
+thankyouBtn.addEventListener("click", function(){
+
+    thankyouScreen.style.display = "none";
+
+    // Chapter 2 yahan se start hoga
+
+});

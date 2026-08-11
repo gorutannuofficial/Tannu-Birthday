@@ -974,9 +974,14 @@ bestwishBtn.addEventListener("click", function(){
 
 });
 
+const roseFinalScreen =
+    document.getElementById("rose-final-screen");
+
 painBtn.addEventListener("click", function(){
 
     painScreen.style.display = "none";
+
+    roseFinalScreen.style.display = "flex";
 
 });
 

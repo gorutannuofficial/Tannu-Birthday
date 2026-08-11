@@ -1016,3 +1016,105 @@ document.addEventListener("dragstart", function(e){
     }
 
 });
+/* =========================
+   FINAL SONG PLAYER
+========================= */
+
+const songFinalScreen =
+    document.getElementById("song-final-screen");
+
+const finalSong =
+    document.getElementById("finalSong");
+
+const songPlayBtn =
+    document.getElementById("songPlayBtn");
+
+const songProgressBar =
+    document.getElementById("song-progress-bar");
+
+const songCurrent =
+    document.getElementById("song-current");
+
+const songDuration =
+    document.getElementById("song-duration");
+
+const songStatus =
+    document.getElementById("song-status");
+
+
+function formatTime(seconds){
+
+    if(isNaN(seconds)){
+        return "0:00";
+    }
+
+    let minutes = Math.floor(seconds / 60);
+
+    let secs = Math.floor(seconds % 60);
+
+    if(secs < 10){
+        secs = "0" + secs;
+    }
+
+    return minutes + ":" + secs;
+}
+
+
+songPlayBtn.addEventListener("click", function(){
+
+    if(finalSong.paused){
+
+        finalSong.play();
+
+        songPlayBtn.innerHTML = "⏸️";
+        songStatus.innerHTML = "Playing for you... ❤️";
+
+    }else{
+
+        finalSong.pause();
+
+        songPlayBtn.innerHTML = "▶️";
+        songStatus.innerHTML = "Paused ❤️";
+
+    }
+
+});
+
+
+finalSong.addEventListener("loadedmetadata", function(){
+
+    songDuration.innerHTML =
+        formatTime(finalSong.duration);
+
+});
+
+
+finalSong.addEventListener("timeupdate", function(){
+
+    if(finalSong.duration){
+
+        const percent =
+            (finalSong.currentTime /
+            finalSong.duration) * 100;
+
+        songProgressBar.style.width =
+            percent + "%";
+
+        songCurrent.innerHTML =
+            formatTime(finalSong.currentTime);
+
+    }
+
+});
+
+
+finalSong.addEventListener("ended", function(){
+
+    songPlayBtn.innerHTML = "🔁";
+
+    songStatus.innerHTML =
+        "Once again... just for you ❤️";
+
+    songProgressBar.style.width = "100%";
+
+});

@@ -983,6 +983,14 @@ painBtn.addEventListener("click", function(){
 
     roseFinalScreen.style.display = "flex";
 
+    setTimeout(function(){
+
+        roseFinalScreen.style.display = "none";
+
+        songFinalScreen.style.display = "flex";
+
+    }, 5500);
+
 });
 
 /* ==========================

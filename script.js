@@ -667,33 +667,33 @@ function updateMeet(){
 
 function showThankYou(){
 
-    // Meet screen hide
-    meetScreen.style.display = "none";
-
-    // Final rose screen show
     const roseFinalScreen =
         document.getElementById("rose-final-screen");
 
-    roseFinalScreen.style.display = "flex";
-
-    // Rose animation restart
     const rose =
         document.querySelector(".rose-animation");
 
+    const roseText =
+        document.getElementById("rose-final-text");
+
+    // Meet screen hide
+    meetScreen.style.display = "none";
+
+    // Final Rose screen show
+    roseFinalScreen.style.display = "flex";
+
+    // Final message
+    roseText.innerHTML =
+        "Sab kuch chhordo,<br>again Happy Birthday to you Bittu 🎀🧸🧿";
+
+    // Rose animation restart
     rose.classList.remove("rose-show");
 
     void rose.offsetWidth;
 
     rose.classList.add("rose-show");
 
-    // Final message
-    const roseText =
-        document.getElementById("rose-final-text");
-
-    roseText.innerHTML =
-        "Sab kuch chhordo,<br>again Happy Birthday to you Bittu 🎀🧸🧿";
-
-    // Rose ke baad song screen
+    // 7 seconds baad Final Song
     setTimeout(function(){
 
         roseFinalScreen.style.display = "none";
@@ -702,7 +702,7 @@ function showThankYou(){
 
     }, 7000);
 
-}
+    }
 nextMeet.addEventListener("click", function(){
 
     meetIndex++;

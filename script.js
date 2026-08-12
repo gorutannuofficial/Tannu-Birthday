@@ -10,29 +10,55 @@ const error = document.getElementById("error");
 
 const progressBar = document.getElementById("progress-bar");
 const progressText = document.getElementById("progress-text");
+
 const letterScreen = document.getElementById("letter-screen");
 const letterText = document.getElementById("letter-text");
 const nextLetter = document.getElementById("nextLetter");
+
 const galleryScreen = document.getElementById("gallery-screen");
 const galleryImage = document.getElementById("gallery-image");
+
+
+// ==========================
+// INITIAL SCREEN
+// ==========================
+
 loadingScreen.style.display = "none";
 welcomeScreen.style.display = "none";
 
-const countdownBox = document.getElementById("countdown-box");
 
-const daysEl = document.getElementById("days");
-const hoursEl = document.getElementById("hours");
-const minutesEl = document.getElementById("minutes");
-const secondsEl = document.getElementById("seconds");
+// ==========================
+// COUNTDOWN
+// ==========================
+
+const countdownBox =
+    document.getElementById("countdown-box");
+
+const daysEl =
+    document.getElementById("days");
+
+const hoursEl =
+    document.getElementById("hours");
+
+const minutesEl =
+    document.getElementById("minutes");
+
+const secondsEl =
+    document.getElementById("seconds");
+
 
 // 🎂 Surprise unlock time
 const unlockTime =
     new Date("2026-08-13T00:01:00+05:30").getTime();
 
+
 function updateCountdown(){
 
     const now = new Date().getTime();
-    const distance = unlockTime - now;
+
+    const distance =
+        unlockTime - now;
+
 
     if(distance <= 0){
 
@@ -41,44 +67,65 @@ function updateCountdown(){
         return true;
     }
 
+
     const days =
-        Math.floor(distance / (1000 * 60 * 60 * 24));
+        Math.floor(
+            distance /
+            (1000 * 60 * 60 * 24)
+        );
+
 
     const hours =
         Math.floor(
-            (distance % (1000 * 60 * 60 * 24)) /
+            (distance %
+            (1000 * 60 * 60 * 24)) /
             (1000 * 60 * 60)
         );
 
+
     const minutes =
         Math.floor(
-            (distance % (1000 * 60 * 60)) /
+            (distance %
+            (1000 * 60 * 60)) /
             (1000 * 60)
         );
 
+
     const seconds =
         Math.floor(
-            (distance % (1000 * 60)) /
+            (distance %
+            (1000 * 60)) /
             1000
         );
+
 
     daysEl.innerHTML = days;
     hoursEl.innerHTML = hours;
     minutesEl.innerHTML = minutes;
     secondsEl.innerHTML = seconds;
 
+
     return false;
 }
 
+
+// Countdown start
 setInterval(updateCountdown, 1000);
+
 updateCountdown();
+
+
+// ==========================
+// UNLOCK BUTTON
+// ==========================
 
 unlockBtn.addEventListener("click", function(){
 
-    // 🔐 Password check
+    // Password check
     if(passwordInput.value.trim() !== PASSWORD){
 
-        error.innerHTML = "❌ Wrong Password";
+        error.innerHTML =
+            "❌ Wrong Password";
 
         passwordInput.style.border =
             "2px solid red";
@@ -90,26 +137,40 @@ unlockBtn.addEventListener("click", function(){
         return;
     }
 
-    // 🎂 Birthday time check
-    const now = new Date().getTime();
+
+    // ==========================
+    // TIME CHECK
+    // ==========================
+
+    const now =
+        new Date().getTime();
+
 
     if(now < unlockTime){
 
         error.innerHTML =
             "⏳ Surprise abhi locked hai... Countdown khatam hone ka wait karo ❤️";
 
+
         passwordInput.style.border =
             "2px solid #ff4d8d";
+
 
         countdownBox.style.display =
             "block";
 
+
         updateCountdown();
+
 
         return;
     }
 
-    // ✅ Password + time dono correct
+
+    // ==========================
+    // UNLOCK
+    // ==========================
+
     error.innerHTML = "";
 
     passwordInput.style.border = "none";
@@ -120,33 +181,42 @@ unlockBtn.addEventListener("click", function(){
 
     loadingScreen.style.display = "flex";
 
+
     let progress = 0;
 
-    const timer = setInterval(function(){
 
-        progress++;
+    const timer =
+        setInterval(function(){
 
-        progressBar.style.width =
-            progress + "%";
+            progress++;
 
-        progressText.innerHTML =
-            progress + "%";
 
-        if(progress >= 100){
+            progressBar.style.width =
+                progress + "%";
 
-            clearInterval(timer);
 
-            setTimeout(function(){
+            progressText.innerHTML =
+                progress + "%";
 
-                loadingScreen.style.display = "none";
 
-                welcomeScreen.style.display = "flex";
+            if(progress >= 100){
 
-            },500);
+                clearInterval(timer);
 
-        }
 
-    },30);
+                setTimeout(function(){
+
+                    loadingScreen.style.display =
+                        "none";
+
+                    welcomeScreen.style.display =
+                        "flex";
+
+                }, 500);
+
+            }
+
+        }, 30);
 
 });
 const startBtn = document.getElementById("startBtn");

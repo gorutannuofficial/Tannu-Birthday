@@ -22,10 +22,13 @@ welcomeScreen.style.display = "none";
 
 unlockBtn.addEventListener("click", function(){
 
+    // 🔐 Password check
     if(passwordInput.value.trim() !== PASSWORD){
 
         error.innerHTML = "❌ Wrong Password";
-        passwordInput.style.border = "2px solid red";
+
+        passwordInput.style.border =
+            "2px solid red";
 
         if(navigator.vibrate){
             navigator.vibrate(200);
@@ -34,10 +37,34 @@ unlockBtn.addEventListener("click", function(){
         return;
     }
 
+    // 🎂 Birthday time check
+    const now = new Date().getTime();
+
+    if(now < unlockTime){
+
+        error.innerHTML =
+            "⏳ Surprise abhi locked hai... Countdown khatam hone ka wait karo ❤️";
+
+        passwordInput.style.border =
+            "2px solid #ff4d8d";
+
+        countdownBox.style.display =
+            "block";
+
+        updateCountdown();
+
+        return;
+    }
+
+    // ✅ Password + time dono correct
     error.innerHTML = "";
+
     passwordInput.style.border = "none";
 
+    countdownBox.style.display = "none";
+
     passwordScreen.style.display = "none";
+
     loadingScreen.style.display = "flex";
 
     let progress = 0;
@@ -46,8 +73,11 @@ unlockBtn.addEventListener("click", function(){
 
         progress++;
 
-        progressBar.style.width = progress + "%";
-        progressText.innerHTML = progress + "%";
+        progressBar.style.width =
+            progress + "%";
+
+        progressText.innerHTML =
+            progress + "%";
 
         if(progress >= 100){
 
@@ -56,6 +86,7 @@ unlockBtn.addEventListener("click", function(){
             setTimeout(function(){
 
                 loadingScreen.style.display = "none";
+
                 welcomeScreen.style.display = "flex";
 
             },500);

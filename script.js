@@ -661,7 +661,48 @@ function updateMeet(){
     meetCaption.innerHTML = meetData[meetIndex].caption;
 
 }
+// ==========================
+// FINAL ROSE SURPRISE
+// ==========================
 
+function showThankYou(){
+
+    // Meet screen hide
+    meetScreen.style.display = "none";
+
+    // Final rose screen show
+    const roseFinalScreen =
+        document.getElementById("rose-final-screen");
+
+    roseFinalScreen.style.display = "flex";
+
+    // Rose animation restart
+    const rose =
+        document.querySelector(".rose-animation");
+
+    rose.classList.remove("rose-show");
+
+    void rose.offsetWidth;
+
+    rose.classList.add("rose-show");
+
+    // Final message
+    const roseText =
+        document.getElementById("rose-final-text");
+
+    roseText.innerHTML =
+        "Sab kuch chhordo,<br>again Happy Birthday to you Bittu 🎀🧸🧿";
+
+    // Rose ke baad song screen
+    setTimeout(function(){
+
+        roseFinalScreen.style.display = "none";
+
+        songFinalScreen.style.display = "flex";
+
+    }, 7000);
+
+}
 nextMeet.addEventListener("click", function(){
 
     meetIndex++;

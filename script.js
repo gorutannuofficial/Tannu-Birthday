@@ -23,6 +23,7 @@ const galleryImage = document.getElementById("gallery-image");
 // INITIAL SCREEN
 // ==========================
 
+passwordScreen.style.display = "flex";
 loadingScreen.style.display = "none";
 welcomeScreen.style.display = "none";
 
@@ -31,70 +32,65 @@ welcomeScreen.style.display = "none";
 // COUNTDOWN
 // ==========================
 
-const countdownBox =
-    document.getElementById("countdown-box");
-
-const daysEl =
-    document.getElementById("days");
-
-const hoursEl =
-    document.getElementById("hours");
-
-const minutesEl =
-    document.getElementById("minutes");
-
-const secondsEl =
-    document.getElementById("seconds");
+const countdownBox = document.getElementById("countdown-box");
+const daysEl = document.getElementById("days");
+const hoursEl = document.getElementById("hours");
+const minutesEl = document.getElementById("minutes");
+const secondsEl = document.getElementById("seconds");
 
 
-// 🎂 Surprise unlock time
+// 🎂 UNLOCK TIME
 const unlockTime =
     new Date("2026-08-13T00:01:00+05:30").getTime();
 
 
 function updateCountdown(){
 
-    const now = new Date().getTime();
+    // Safety check
+    if(
+        !countdownBox ||
+        !daysEl ||
+        !hoursEl ||
+        !minutesEl ||
+        !secondsEl
+    ){
+        return true;
+    }
 
-    const distance =
-        unlockTime - now;
+    const now = Date.now();
+    const distance = unlockTime - now;
 
 
+    // Countdown finished
     if(distance <= 0){
 
         countdownBox.style.display = "none";
+
+        // Password screen MUST remain visible
+        passwordScreen.style.display = "flex";
 
         return true;
     }
 
 
     const days =
-        Math.floor(
-            distance /
-            (1000 * 60 * 60 * 24)
-        );
-
+        Math.floor(distance / (1000 * 60 * 60 * 24));
 
     const hours =
         Math.floor(
-            (distance %
-            (1000 * 60 * 60 * 24)) /
+            (distance % (1000 * 60 * 60 * 24)) /
             (1000 * 60 * 60)
         );
 
-
     const minutes =
         Math.floor(
-            (distance %
-            (1000 * 60 * 60)) /
+            (distance % (1000 * 60 * 60)) /
             (1000 * 60)
         );
 
-
     const seconds =
         Math.floor(
-            (distance %
-            (1000 * 60)) /
+            (distance % (1000 * 60)) /
             1000
         );
 
@@ -104,15 +100,12 @@ function updateCountdown(){
     minutesEl.innerHTML = minutes;
     secondsEl.innerHTML = seconds;
 
-
     return false;
 }
 
 
-// Countdown start
-setInterval(updateCountdown, 1000);
-
 updateCountdown();
+setInterval(updateCountdown, 1000);
 
 
 // ==========================
@@ -121,11 +114,9 @@ updateCountdown();
 
 unlockBtn.addEventListener("click", function(){
 
-    // Password check
     if(passwordInput.value.trim() !== PASSWORD){
 
-        error.innerHTML =
-            "❌ Wrong Password";
+        error.innerHTML = "❌ Wrong Password";
 
         passwordInput.style.border =
             "2px solid red";
@@ -138,12 +129,10 @@ unlockBtn.addEventListener("click", function(){
     }
 
 
-    // ==========================
-    // TIME CHECK
-    // ==========================
+    // Since countdown is already finished,
+    // password will unlock normally.
 
-    const now =
-        new Date().getTime();
+    const now = Date.now();
 
 
     if(now < unlockTime){
@@ -151,107 +140,54 @@ unlockBtn.addEventListener("click", function(){
         error.innerHTML =
             "⏳ Surprise abhi locked hai... Countdown khatam hone ka wait karo ❤️";
 
-
-        passwordInput.style.border =
-            "2px solid #ff4d8d";
-
-
-        countdownBox.style.display =
-            "block";
-
+        countdownBox.style.display = "block";
 
         updateCountdown();
-
 
         return;
     }
 
 
     // ==========================
-    // UNLOCK
+    // OPEN SURPRISE
     // ==========================
 
     error.innerHTML = "";
 
-    passwordInput.style.border = "none";
-
     countdownBox.style.display = "none";
 
     passwordScreen.style.display = "none";
-
     loadingScreen.style.display = "flex";
 
 
     let progress = 0;
 
 
-    const timer =
-        setInterval(function(){
+    const timer = setInterval(function(){
 
-            progress++;
+        progress++;
 
+        progressBar.style.width =
+            progress + "%";
 
-            progressBar.style.width =
-                progress + "%";
-
-
-            progressText.innerHTML =
-                progress + "%";
+        progressText.innerHTML =
+            progress + "%";
 
 
-            if(progress >= 100){
+        if(progress >= 100){
 
-                clearInterval(timer);
+            clearInterval(timer);
 
+            setTimeout(function(){
 
-                setTimeout(function(){
+                loadingScreen.style.display = "none";
+                welcomeScreen.style.display = "flex";
 
-                    loadingScreen.style.display =
-                        "none";
+            }, 500);
 
-                    welcomeScreen.style.display =
-                        "flex";
-
-                }, 500);
-
-            }
-
-        }, 30);
-
-});
-const startBtn = document.getElementById("startBtn");
-
-startBtn.addEventListener("click", function () {
-
-    welcomeScreen.style.display = "none";
-    letterScreen.style.display = "flex";
-
-    const message = `❤️ Dear Tannu ❤️
-
-Happy Birthday Meri Jaan...
-
-Tum meri life ki sabse beautiful gift ho.
-
-Har din tumhare saath aur bhi special ban jata hai.
-
-Main hamesha tumhare saath rahunga.
-
-I Love You Forever ❤️`;
-
-    let i = 0;
-    letterText.innerHTML = "";
-
-    const typing = setInterval(function () {
-
-        letterText.innerHTML += message.charAt(i);
-
-        i++;
-
-        if (i >= message.length) {
-            clearInterval(typing);
         }
 
-    }, 40);
+    }, 30);
 
 });
 // ==========================

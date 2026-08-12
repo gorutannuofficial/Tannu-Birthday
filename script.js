@@ -41,9 +41,7 @@ unlockBtn.addEventListener("click", function(){
     if(passwordInput.value.trim() !== PASSWORD){
 
         error.innerHTML = "❌ Wrong Password";
-
-        passwordInput.style.border =
-            "2px solid red";
+        passwordInput.style.border = "2px solid red";
 
         if(navigator.vibrate){
             navigator.vibrate(200);
@@ -52,51 +50,20 @@ unlockBtn.addEventListener("click", function(){
         return;
     }
 
-
-    // Since countdown is already finished,
-    // password will unlock normally.
-
-    const now = Date.now();
-
-
-    if(now < unlockTime){
-
-        error.innerHTML =
-            "⏳ Surprise abhi locked hai... Countdown khatam hone ka wait karo ❤️";
-
-        countdownBox.style.display = "block";
-
-        updateCountdown();
-
-        return;
-    }
-
-
-    // ==========================
-    // OPEN SURPRISE
-    // ==========================
-
     error.innerHTML = "";
-
-    countdownBox.style.display = "none";
+    passwordInput.style.border = "none";
 
     passwordScreen.style.display = "none";
     loadingScreen.style.display = "flex";
 
-
     let progress = 0;
-
 
     const timer = setInterval(function(){
 
         progress++;
 
-        progressBar.style.width =
-            progress + "%";
-
-        progressText.innerHTML =
-            progress + "%";
-
+        progressBar.style.width = progress + "%";
+        progressText.innerHTML = progress + "%";
 
         if(progress >= 100){
 

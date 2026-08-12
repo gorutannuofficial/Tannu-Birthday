@@ -34,23 +34,7 @@ unlockBtn.addEventListener("click", function(){
         return;
     }
 
-    // 🎂 Birthday time check
-    const now = new Date().getTime();
 
-    if(now < unlockTime){
-
-        error.innerHTML =
-        "⏳ Surprise abhi locked hai... Countdown khatam hone ka wait karo ❤️";
-
-        passwordInput.style.border =
-        "2px solid #ff4d8d";
-
-        countdownBox.style.display = "block";
-
-        updateCountdown();
-
-        return;
-    }
 
     // ✅ Password + time dono correct
     error.innerHTML = "";

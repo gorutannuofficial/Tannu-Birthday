@@ -85,7 +85,6 @@ unlockBtn.addEventListener("click", function () {
 // ==========================
 
 const startBtn = document.getElementById("startBtn");
-const startBtn = document.getElementById("startBtn");
 
 if (startBtn) {
 

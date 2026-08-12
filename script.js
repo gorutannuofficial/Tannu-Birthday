@@ -19,7 +19,7 @@ loadingScreen.style.display = "none";
 welcomeScreen.style.display = "none";
 
 
-unlockBtn.addEventListener("click", function(){
+
 unlockBtn.addEventListener("click", function(){
 
     if(passwordInput.value.trim() !== PASSWORD){

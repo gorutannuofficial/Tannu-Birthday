@@ -20,8 +20,8 @@ welcomeScreen.style.display = "none";
 
 
 unlockBtn.addEventListener("click", function(){
+unlockBtn.addEventListener("click", function(){
 
-    // 🔐 Password check
     if(passwordInput.value.trim() !== PASSWORD){
 
         error.innerHTML = "❌ Wrong Password";
@@ -34,12 +34,8 @@ unlockBtn.addEventListener("click", function(){
         return;
     }
 
-
-
-    // ✅ Password + time dono correct
     error.innerHTML = "";
     passwordInput.style.border = "none";
-    
 
     passwordScreen.style.display = "none";
     loadingScreen.style.display = "flex";

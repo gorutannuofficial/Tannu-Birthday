@@ -55,7 +55,7 @@ unlockBtn.addEventListener("click", function(){
     // ✅ Password + time dono correct
     error.innerHTML = "";
     passwordInput.style.border = "none";
-    countdownBox.style.display = "none";
+    
 
     passwordScreen.style.display = "none";
     loadingScreen.style.display = "flex";

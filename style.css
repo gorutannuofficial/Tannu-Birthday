@@ -1416,3 +1416,26 @@ img {
     }
 
 }
+/* ==========================
+   FIX BUTTON CLICK
+========================== */
+
+#hearts-container {
+    pointer-events: none !important;
+}
+
+.heart {
+    pointer-events: none !important;
+}
+
+#welcome-screen,
+#welcome-screen .glass-card,
+#startBtn {
+    position: relative;
+    z-index: 1000;
+}
+
+#startBtn {
+    pointer-events: auto !important;
+    cursor: pointer;
+}

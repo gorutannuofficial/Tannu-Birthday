@@ -81,6 +81,47 @@ unlockBtn.addEventListener("click", function () {
 
 });
 // ==========================
+// WELCOME → LETTER
+// ==========================
+
+const startBtn = document.getElementById("startBtn");
+
+startBtn.addEventListener("click", function () {
+
+    welcomeScreen.style.display = "none";
+    letterScreen.style.display = "flex";
+
+    const message = `❤️ Dear Tannu ❤️
+
+Happy Birthday!
+
+Tum meri life ki sabse special memories ka ek beautiful part ho.
+
+Har moment jo humne saath spend kiya hai,
+woh mere liye bahut precious hai.
+
+Aaj ka din tumhare liye bahut special ho,
+aur main chahta hoon ki ye chhota sa surprise
+tumhe hamesha yaad rahe. ❤️`;
+
+    let i = 0;
+
+    letterText.innerHTML = "";
+
+    const typing = setInterval(function () {
+
+        letterText.innerHTML += message.charAt(i);
+
+        i++;
+
+        if (i >= message.length) {
+            clearInterval(typing);
+        }
+
+    }, 40);
+
+});
+// ==========================
 // PHOTO GALLERY
 // ==========================
 

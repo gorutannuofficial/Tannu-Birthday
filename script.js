@@ -18,7 +18,60 @@ const galleryImage = document.getElementById("gallery-image");
 loadingScreen.style.display = "none";
 welcomeScreen.style.display = "none";
 
+const countdownBox = document.getElementById("countdown-box");
 
+const daysEl = document.getElementById("days");
+const hoursEl = document.getElementById("hours");
+const minutesEl = document.getElementById("minutes");
+const secondsEl = document.getElementById("seconds");
+
+// 🎂 Surprise unlock time
+const unlockTime =
+    new Date("2026-08-13T00:01:00+05:30").getTime();
+
+function updateCountdown(){
+
+    const now = new Date().getTime();
+    const distance = unlockTime - now;
+
+    if(distance <= 0){
+
+        countdownBox.style.display = "none";
+
+        return true;
+    }
+
+    const days =
+        Math.floor(distance / (1000 * 60 * 60 * 24));
+
+    const hours =
+        Math.floor(
+            (distance % (1000 * 60 * 60 * 24)) /
+            (1000 * 60 * 60)
+        );
+
+    const minutes =
+        Math.floor(
+            (distance % (1000 * 60 * 60)) /
+            (1000 * 60)
+        );
+
+    const seconds =
+        Math.floor(
+            (distance % (1000 * 60)) /
+            1000
+        );
+
+    daysEl.innerHTML = days;
+    hoursEl.innerHTML = hours;
+    minutesEl.innerHTML = minutes;
+    secondsEl.innerHTML = seconds;
+
+    return false;
+}
+
+setInterval(updateCountdown, 1000);
+updateCountdown();
 
 unlockBtn.addEventListener("click", function(){
 

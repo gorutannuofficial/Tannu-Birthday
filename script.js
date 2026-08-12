@@ -85,13 +85,20 @@ unlockBtn.addEventListener("click", function () {
 // ==========================
 
 const startBtn = document.getElementById("startBtn");
+const startBtn = document.getElementById("startBtn");
 
-startBtn.addEventListener("click", function () {
+if (startBtn) {
 
-    welcomeScreen.style.display = "none";
-    letterScreen.style.display = "flex";
+    startBtn.addEventListener("click", function () {
 
-    const message = `❤️ Dear Tannu ❤️
+        console.log("START BUTTON CLICKED");
+
+        welcomeScreen.style.display = "none";
+        letterScreen.style.display = "flex";
+
+        letterText.innerHTML = "";
+
+        const message = `❤️ Dear Tannu ❤️
 
 Happy Birthday!
 
@@ -104,23 +111,23 @@ Aaj ka din tumhare liye bahut special ho,
 aur main chahta hoon ki ye chhota sa surprise
 tumhe hamesha yaad rahe. ❤️`;
 
-    let i = 0;
+        let i = 0;
 
-    letterText.innerHTML = "";
+        const typing = setInterval(function () {
 
-    const typing = setInterval(function () {
+            letterText.innerHTML += message.charAt(i);
 
-        letterText.innerHTML += message.charAt(i);
+            i++;
 
-        i++;
+            if (i >= message.length) {
+                clearInterval(typing);
+            }
 
-        if (i >= message.length) {
-            clearInterval(typing);
-        }
+        }, 40);
 
-    }, 40);
+    });
 
-});
+}
 // ==========================
 // PHOTO GALLERY
 // ==========================

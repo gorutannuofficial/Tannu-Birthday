@@ -18,64 +18,63 @@ const nextLetter = document.getElementById("nextLetter");
 const galleryScreen = document.getElementById("gallery-screen");
 const galleryImage = document.getElementById("gallery-image");
 
-
 // ==========================
 // INITIAL SCREEN
 // ==========================
 
-passwordScreen.style.display = "flex";
 loadingScreen.style.display = "none";
 welcomeScreen.style.display = "none";
-
-
-
-setInterval(updateCountdown, 1000);
-
 
 // ==========================
 // UNLOCK BUTTON
 // ==========================
 
-unlockBtn.addEventListener("click", function(){
+unlockBtn.addEventListener("click", function () {
 
-    if(passwordInput.value.trim() !== PASSWORD){
+    const enteredPassword = passwordInput.value.trim();
+
+    if (enteredPassword !== PASSWORD) {
 
         error.innerHTML = "❌ Wrong Password";
+
         passwordInput.style.border = "2px solid red";
 
-        if(navigator.vibrate){
+        if (navigator.vibrate) {
             navigator.vibrate(200);
         }
 
         return;
     }
 
+    // Correct password
     error.innerHTML = "";
-    passwordInput.style.border = "none";
+    passwordInput.style.border = "";
 
     passwordScreen.style.display = "none";
     loadingScreen.style.display = "flex";
 
     let progress = 0;
 
-    const timer = setInterval(function(){
+    progressBar.style.width = "0%";
+    progressText.innerHTML = "0%";
+
+    const timer = setInterval(function () {
 
         progress++;
 
         progressBar.style.width = progress + "%";
         progressText.innerHTML = progress + "%";
 
-        if(progress >= 100){
+        if (progress >= 100) {
 
             clearInterval(timer);
 
-            setTimeout(function(){
+            setTimeout(function () {
 
                 loadingScreen.style.display = "none";
                 welcomeScreen.style.display = "flex";
 
             }, 500);
-
         }
 
     }, 30);

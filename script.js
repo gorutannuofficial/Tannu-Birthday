@@ -954,44 +954,6 @@ function showPain(){
 
     let i = 0;
 
-    const typing = setInterval(function(){
-
-        painText.innerHTML += painMessage.charAt(i);
-
-        i++;
-
-        if(i >= painMessage.length){
-            clearInterval(typing);
-        }
-
-    },35);
-
-}
-
-bestwishBtn.addEventListener("click", function(){
-
-    showPain();
-
-});
-
-const roseFinalScreen =
-    document.getElementById("rose-final-screen");
-
-painBtn.addEventListener("click", function(){
-
-    painScreen.style.display = "none";
-
-    roseFinalScreen.style.display = "flex";
-
-    setTimeout(function(){
-
-        roseFinalScreen.style.display = "none";
-
-        songFinalScreen.style.display = "flex";
-
-    }, 5500);
-
-});
 
 /* ==========================
    BASIC SCREEN PROTECTION
